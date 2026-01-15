@@ -325,9 +325,12 @@ p {
 .hero-content {
     position: relative;
     z-index: 2;
-    text-align: center;
+    text-align: left;
     color: var(--text-light);
     padding: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .hero-title {
@@ -341,6 +344,7 @@ p {
     margin-bottom: var(--spacing-lg);
     font-weight: 300;
     text-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    max-width: 600px;
 }
 
 .scroll-indicator {
