@@ -208,9 +208,9 @@ p {
     top: 0;
     left: 0;
     width: 100%;
-    background: hsla(0, 0%, 100%, 0.95);
+    background: transparent;
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
     z-index: 1000;
     transition: all var(--transition-medium);
 }
@@ -245,10 +245,7 @@ p {
 }
 
 .nav-brand-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: none;
 }
 
 .nav-menu {
