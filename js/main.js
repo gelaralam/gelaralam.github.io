@@ -1,6 +1,6 @@
 /**
  * Main JavaScript Entry Point
- * Initializes all modules for Kasepuhan Gelar Alam landing page
+ * Initializes all modules for Kasepuhan Gelaralam landing page
  */
 
 import Navigation from './modules/navigation.js';
@@ -11,7 +11,7 @@ import Animations from './modules/animations.js';
  * Initialize application when DOM is ready
  */
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🌿 Kasepuhan Gelar Alam - Landing Page Initialized');
+    console.log('🌿 Kasepuhan Gelaralam - Landing Page Initialized');
 
     // Initialize Navigation
     new Navigation();

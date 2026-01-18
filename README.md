@@ -1,6 +1,6 @@
-# Kasepuhan Gelar Alam - Landing Page
+# Kasepuhan Gelaralam - Landing Page
 
-Sebuah landing page modern dan menarik untuk mempromosikan Kasepuhan Gelar Alam sebagai destinasi wisata budaya Indonesia.
+Sebuah landing page modern dan menarik untuk mempromosikan Kasepuhan Gelaralam sebagai destinasi wisata budaya Indonesia.
 
 ## 🌟 Features
 
@@ -83,7 +83,7 @@ http://localhost:8000
 ## 📱 Sections
 
 1. **Hero** - Eye-catching hero section dengan background image dan CTA
-2. **Tentang** - Informasi tentang Kasepuhan Gelar Alam
+2. **Tentang** - Informasi tentang Kasepuhan Gelaralam
 3. **Warisan Budaya** - Highlights dari tradisi dan budaya
 4. **Galeri** - Photo gallery dengan lightbox
 5. **Informasi Kunjungan** - Jam, harga, aktivitas, dan lokasi
@@ -203,7 +203,7 @@ This project is [MIT](LICENSE) licensed.
 
 ## 👤 Author
 
-**Kasepuhan Gelar Alam**
+**Kasepuhan Gelaralam**
 
 - Website: [gelaralam.github.io](https://gelaralam.github.io)
 - Email: info@kasepuhangelaralam.id
@@ -214,7 +214,7 @@ Give a ⭐️ if you like this project!
 
 ## 📞 Contact
 
-Untuk informasi lebih lanjut tentang Kasepuhan Gelar Alam:
+Untuk informasi lebih lanjut tentang Kasepuhan Gelaralam:
 
 - 📧 Email: info@kasepuhangelaralam.id
 - 📱 Phone: +62 812-3456-7890
