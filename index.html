@@ -165,6 +165,9 @@
             <div class="ngaseuk__slider" id="budaya-slider">
                 <!-- Populated by JS -->
             </div>
+            <div class="ngaseuk__indicators" id="budaya-indicators">
+                <!-- Populated by JS -->
+            </div>
         </div>
     </section>
 
@@ -334,19 +337,34 @@
             const section = document.querySelector('.ngaseuk');
             let curBudaya = 0;
 
+            const indicatorContainer = document.getElementById('budaya-indicators');
+
             const renderBudaya = () => {
                 slider.innerHTML = '';
+                if (indicatorContainer) indicatorContainer.innerHTML = '';
+
                 budayaData.forEach((item, i) => {
                     const div = document.createElement('div');
                     div.className = `ngaseuk__slide ${i === curBudaya ? 'active' : ''}`;
                     div.innerHTML = `
-                        <h3 class="ngaseuk__label">UPACARA ADAT</h3>
+                        <div class="ngaseuk__number">0${i + 1}</div>
+                        <h3 class="ngaseuk__label">RITUAL ADAT KASEPUHAN</h3>
                         <h2 class="ngaseuk__title">${item.title}</h2>
+                        <div class="ngaseuk__divider-glow"></div>
                         <p class="ngaseuk__description">${item.d}</p>
                     `;
                     slider.appendChild(div);
+
+                    if (indicatorContainer) {
+                        const dot = document.createElement('div');
+                        dot.className = `ngaseuk__dot ${i === curBudaya ? 'active' : ''}`;
+                        dot.onclick = () => { curBudaya = i; renderBudaya(); };
+                        indicatorContainer.appendChild(dot);
+                    }
                 });
-                section.style.backgroundImage = `url('${budayaData[curBudaya].b}')`;
+
+                // Set background with transition effect
+                section.style.setProperty('--bg-image', `url('${budayaData[curBudaya].b}')`);
             };
 
             document.getElementById('budaya-prev').onclick = () => { curBudaya = (curBudaya - 1 + budayaData.length) % budayaData.length; renderBudaya(); };
