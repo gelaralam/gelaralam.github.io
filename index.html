@@ -20,169 +20,17 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        /* Custom Styles for Premium Layout */
-        .hero {
-            background: url('assets/hero-bg.jpg') center/cover no-repeat;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding: 80px 0;
-            overflow: hidden;
-        }
-
-        .hero__container {
-            position: relative;
-            z-index: 2;
-            display: block;
-            width: 100%;
-        }
-
-        .hero__description {
-            color: #fff;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin: 2rem 0;
-            max-width: 600px;
-            text-align: justify;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .hero__content {
-            text-align: left;
-        }
-
-        .hero__logo {
-            width: 140px;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
-        }
-
-        .hero__subtitle {
-            color: var(--color-accent);
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            display: block;
-            font-size: 1.5rem;
-        }
-
-        .hero__title {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1;
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 400;
-            color: #fff;
-        }
-
-        .hero__description {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin: 2rem 0;
-            max-width: 600px;
-            text-align: justify;
-        }
-
-        .hero__portrait-box {
-            text-align: center;
-        }
-
-        .hero__portrait {
-            width: 100%;
-            max-width: 500px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .hero__portrait-name {
-            color: #fff;
-            font-size: 1.8rem;
-            margin-top: 20px;
-            margin-bottom: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .hero__portrait-title {
-            color: #fff;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            opacity: 0.8;
-            margin-top: -5px;
-        }
-
-        /* Sejarah Section Slider Fix */
-        .sejarah {
-            background: url('assets/sejarah-bg.png') center/cover no-repeat fixed;
-            padding: 100px 0;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .sejarah__container {
-            max-width: 800px;
-            margin-left: 10%;
-        }
-
-        .sejarah__slide {
-            display: none;
-            color: #fff;
-            line-height: 1.8;
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .sejarah__slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .btn--blue {
-            background-color: #0047FF;
-            color: #fff;
-            border-radius: 0;
-            padding: 15px 40px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: background 0.3s ease;
-        }
-
-        .btn--blue:hover {
-            background-color: #0036cc;
-        }
-    </style>
+    <!-- Custom styles are in css/style.css -->
 </head>
 
 <body>
     <!-- Header & Navigation -->
     <header class="header">
         <nav class="nav">
-            <div class="container nav__container"
-                style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <a href="#" class="nav__brand"
-                    style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff;">
-                    <img src="assets/logo.png" alt="Logo Kasepuhan" style="height: 50px;">
-                    <span style="font-weight: 700; letter-spacing: 1px;">KASEPUHAN GELARALAM</span>
+            <div class="container nav__container">
+                <a href="#" class="nav__brand">
+                    <img src="assets/logo.png" alt="Logo Kasepuhan">
+                    <span>KASEPUHAN GELARALAM</span>
                 </a>
                 <button class="nav__toggle" id="nav-toggle">
                     <span></span><span></span><span></span>
@@ -201,9 +49,9 @@
 
     <!-- Hero Section -->
     <section class="hero" id="beranda">
-        <div class="container hero__container" style="display: block;">
+        <div class="container hero__container">
             <!-- Content -->
-            <div class="hero__content" style="max-width: 800px;">
+            <div class="hero__content">
                 <img src="assets/logo.png" alt="Logo Kasepuhan" class="hero__logo">
                 <span class="hero__subtitle">KASEPUHAN</span>
                 <h1 class="hero__title">GELARALAM</h1>
@@ -216,8 +64,8 @@
                     padi ke lumbung), nutu (menumbuk padi), nganyaran (mencicipi nasi dari panen baru), séréntaun
                     (syukuran panen), dan lain-lain.
                 </p>
-                <div class="hero__identity-labels" style="margin-top: 40px;">
-                    <h4 class="hero__portrait-name" style="margin-top: 0;">ABAH UGI SUGRIANA RAKASIWI</h4>
+                <div class="hero__identity-labels">
+                    <h4 class="hero__portrait-name">ABAH UGI SUGRIANA RAKASIWI</h4>
                     <p class="hero__portrait-title">KETUA ADAT KASEPUHAN GELARALAM</p>
                 </div>
             </div>
@@ -227,11 +75,8 @@
     <!-- Sejarah Section -->
     <section class="sejarah" id="sejarah">
         <div class="container sejarah__container">
-            <h3 style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase;">
-                TENTANG KAMI</h3>
-            <h2
-                style="font-family: 'Times New Roman', serif; font-size: 5rem; color: #fff; margin-top: -20px; text-transform: uppercase; font-weight: 400; margin-bottom: 2rem;">
-                SEJARAH</h2>
+            <h3 class="section__subtitle-alt">TENTANG KAMI</h3>
+            <h2 class="section__title-large">SEJARAH</h2>
 
             <div class="sejarah__slider-container">
                 <p class="sejarah__slide active">Jika meninjau sejarah dan perkembangan rorokan (lembaga) adat, hal ini
@@ -299,7 +144,7 @@
                     Kasepuhan Ciptamulya, yang sekarang diteruskan oleh Abah Héndrik.</p>
             </div>
 
-            <div class="sejarah__dots" style="display: flex; gap: 12px; margin-top: 10px;">
+            <div class="sejarah__dots">
                 <button class="sejarah__dot active" data-slide="0"></button>
                 <button class="sejarah__dot" data-slide="1"></button>
                 <button class="sejarah__dot" data-slide="2"></button>
@@ -324,14 +169,10 @@
     </section>
 
     <!-- Timeline/Jadwal -->
-    <section class="timeline" id="jadwal" style="padding: 100px 0; background: #ffffff;">
-        <div class="container" style="text-align: left;">
-            <h2
-                style="font-family: 'Times New Roman', serif; font-size: 3rem; color: #1a1a1a; margin: 0; text-transform: uppercase; font-weight: 400; line-height: 1.1;">
-                JADWAL ACARA KEGIATAN ADAT 2026</h2>
-            <h3
-                style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; margin-bottom: 3rem; font-size: 1.2rem;">
-                KASEPUHAN GELARALAM</h3>
+    <section class="timeline" id="jadwal">
+        <div class="container">
+            <h2 class="timeline__section-title">JADWAL ACARA KEGIATAN ADAT 2026</h2>
+            <h3 class="timeline__section-subtitle">KASEPUHAN GELARALAM</h3>
             <div id="timeline-container" class="timeline__container"></div>
         </div>
     </section>
@@ -499,9 +340,9 @@
                     const div = document.createElement('div');
                     div.className = `ngaseuk__slide ${i === curBudaya ? 'active' : ''}`;
                     div.innerHTML = `
-                        <h3 style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px;">UPACARA ADAT</h3>
-                        <h2 class="ngaseuk__title" style="font-family: 'Times New Roman', serif; font-size: 5rem; color: #fff; margin: 0; text-transform: uppercase; font-weight: 400; margin-bottom: 1.5rem; line-height: 1;">${item.title}</h2>
-                        <p class="ngaseuk__description" style="max-width: 700px; line-height: 1.8;">${item.d}</p>
+                        <h3 class="ngaseuk__label">UPACARA ADAT</h3>
+                        <h2 class="ngaseuk__title">${item.title}</h2>
+                        <p class="ngaseuk__description">${item.d}</p>
                     `;
                     slider.appendChild(div);
                 });
