@@ -1,145 +1,140 @@
-/**
- * Gallery Module
- * Handles image gallery with lightbox functionality
- */
-
+// Gallery Module
 export class Gallery {
     constructor() {
-        this.galleryItems = document.querySelectorAll('.gallery-item');
+        this.galleryGrid = document.getElementById('gallery-grid');
+        this.filterBtns = document.querySelectorAll('.filter-btn');
         this.lightbox = document.getElementById('lightbox');
-        this.lightboxImage = document.getElementById('lightbox-image');
-        this.lightboxCaption = document.getElementById('lightbox-caption');
-        this.lightboxClose = document.getElementById('lightbox-close');
-        this.lightboxPrev = document.getElementById('lightbox-prev');
-        this.lightboxNext = document.getElementById('lightbox-next');
-
+        this.currentCategory = 'all';
         this.currentIndex = 0;
-        this.images = [];
+
+        this.galleryItems = [
+            { id: 1, category: 'adat', title: 'Upacara Adat Seren Taun', image: 'assets/gallery/seren-taun.jpg' },
+            { id: 2, category: 'life', title: 'Leuit Si Jimat', image: 'assets/gallery/rumah-adat.jpg' },
+            { id: 3, category: 'life', title: 'Aktivitas Masyarakat', image: 'assets/gallery/masyarakat.jpg' },
+            { id: 4, category: 'adat', title: 'Tari Tradisional', image: 'assets/gallery/tari.jpg' },
+            { id: 5, category: 'craft', title: 'Kerajinan Tangan', image: 'assets/gallery/kerajinan.jpg' },
+            { id: 6, category: 'life', title: 'Sistem Pertanian Huma', image: 'assets/gallery/pertanian.jpg' }
+        ];
 
         this.init();
     }
 
     init() {
-        this.setupGalleryData();
-        this.setupGalleryClick();
-        this.setupLightboxControls();
-        this.setupKeyboardNavigation();
+        this.render();
+        this.setupFilters();
+        this.setupLightbox();
+        this.setupAnimation();
     }
 
-    /**
-     * Collect gallery data
-     */
-    setupGalleryData() {
-        this.galleryItems.forEach(item => {
-            const img = item.querySelector('img');
-            const caption = item.querySelector('.gallery-caption');
+    setupFilters() {
+        this.filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                if (this.currentCategory === filter) return;
 
-            this.images.push({
-                src: img.src,
-                alt: img.alt,
-                caption: caption ? caption.textContent : img.alt
+                this.filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                this.currentCategory = filter;
+
+                this.render();
+                this.setupAnimation();
             });
         });
     }
 
-    /**
-     * Setup click event on gallery items
-     */
-    setupGalleryClick() {
-        this.galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                this.openLightbox(index);
-            });
+    render() {
+        if (!this.galleryGrid) return;
+        this.galleryGrid.innerHTML = '';
+
+        const filteredItems = this.currentCategory === 'all'
+            ? this.galleryItems
+            : this.galleryItems.filter(item => item.category === this.currentCategory);
+
+        filteredItems.forEach((item, index) => {
+            const galleryItem = this.createGalleryItem(item, index, filteredItems);
+            this.galleryGrid.appendChild(galleryItem);
         });
     }
 
-    /**
-     * Open lightbox with specific image
-     */
-    openLightbox(index) {
-        this.currentIndex = index;
-        this.updateLightboxImage();
+    createGalleryItem(item, index, list) {
+        const div = document.createElement('div');
+        div.className = 'gallery__item';
+        div.style.animationDelay = `${index * 0.1}s`;
+
+        div.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400/2d2d2d/d4af37?text=Image+Unavailable'">
+            <div class="gallery__item-overlay">
+                <h3 class="gallery__item-title">${item.title}</h3>
+            </div>
+        `;
+
+        div.addEventListener('click', () => {
+            this.openLightbox(item, list);
+        });
+
+        return div;
+    }
+
+    setupLightbox() {
+        const closeBtn = this.lightbox.querySelector('.lightbox__close');
+        const prevBtn = this.lightbox.querySelector('.lightbox__nav--prev');
+        const nextBtn = this.lightbox.querySelector('.lightbox__nav--next');
+
+        closeBtn.addEventListener('click', () => this.closeLightbox());
+        prevBtn.addEventListener('click', () => this.navigateLightbox(-1));
+        nextBtn.addEventListener('click', () => this.navigateLightbox(1));
+
+        this.lightbox.addEventListener('click', (e) => {
+            if (e.target === this.lightbox) this.closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!this.lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') this.closeLightbox();
+            if (e.key === 'ArrowLeft') this.navigateLightbox(-1);
+            if (e.key === 'ArrowRight') this.navigateLightbox(1);
+        });
+    }
+
+    openLightbox(item, list) {
+        this.currentList = list;
+        this.currentIndex = list.indexOf(item);
+        this.updateLightboxContent();
         this.lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
-    /**
-     * Close lightbox
-     */
+    navigateLightbox(step) {
+        this.currentIndex = (this.currentIndex + step + this.currentList.length) % this.currentList.length;
+        this.updateLightboxContent();
+    }
+
+    updateLightboxContent() {
+        const item = this.currentList[this.currentIndex];
+        const img = this.lightbox.querySelector('.lightbox__image');
+        const title = this.lightbox.querySelector('.lightbox__title');
+
+        img.src = item.image;
+        img.alt = item.title;
+        title.textContent = item.title;
+    }
+
     closeLightbox() {
         this.lightbox.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    /**
-     * Update lightbox image
-     */
-    updateLightboxImage() {
-        const image = this.images[this.currentIndex];
-        this.lightboxImage.src = image.src;
-        this.lightboxImage.alt = image.alt;
-        this.lightboxCaption.textContent = image.caption;
-    }
+    setupAnimation() {
+        const items = this.galleryGrid.querySelectorAll('.gallery__item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
 
-    /**
-     * Navigate to previous image
-     */
-    previousImage() {
-        this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-        this.updateLightboxImage();
-    }
-
-    /**
-     * Navigate to next image
-     */
-    nextImage() {
-        this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        this.updateLightboxImage();
-    }
-
-    /**
-     * Setup lightbox controls (close, prev, next)
-     */
-    setupLightboxControls() {
-        this.lightboxClose.addEventListener('click', () => {
-            this.closeLightbox();
-        });
-
-        this.lightboxPrev.addEventListener('click', () => {
-            this.previousImage();
-        });
-
-        this.lightboxNext.addEventListener('click', () => {
-            this.nextImage();
-        });
-
-        // Close when clicking on backdrop
-        this.lightbox.addEventListener('click', (e) => {
-            if (e.target === this.lightbox) {
-                this.closeLightbox();
-            }
-        });
-    }
-
-    /**
-     * Setup keyboard navigation (ESC, Arrow keys)
-     */
-    setupKeyboardNavigation() {
-        document.addEventListener('keydown', (e) => {
-            if (!this.lightbox.classList.contains('active')) return;
-
-            switch (e.key) {
-                case 'Escape':
-                    this.closeLightbox();
-                    break;
-                case 'ArrowLeft':
-                    this.previousImage();
-                    break;
-                case 'ArrowRight':
-                    this.nextImage();
-                    break;
-            }
-        });
+        items.forEach(item => observer.observe(item));
     }
 }
 

@@ -4,352 +4,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasepuhan Gelaralam | Melestarikan Budaya, Menjaga Harmoni Alam</title>
     <meta name="description"
-        content="Kasepuhan Gelaralam - Destinasi wisata budaya tradisional Indonesia yang mempesona. Temukan keindahan alam, warisan budaya, dan tradisi yang masih lestari.">
-    <meta name="keywords"
-        content="Kasepuhan Gelaralam, wisata budaya, tradisi Indonesia, desa adat, wisata Sunda, heritage tourism">
-    <meta name="author" content="Kasepuhan Gelaralam">
-    <meta property="og:title" content="Kasepuhan Gelaralam - Warisan Budaya Indonesia">
-    <meta property="og:description" content="Jelajahi keindahan tradisi dan budaya di Kasepuhan Gelaralam">
-    <meta property="og:image" content="images/hero.png">
-    <meta property="og:type" content="website">
-    <title>Kasepuhan Gelaralam - Warisan Budaya Indonesia</title>
-    <link rel="stylesheet" href="css/style.css">
+        content="Website Resmi Kasepuhan Gelaralam - Mengenal Sejarah, Budaya, dan Tradisi Kampung Adat yang Hidup Harmonis dengan Alam.">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom Styles for Premium Layout */
+        .hero {
+            background: url('assets/hero-bg.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .hero__container {
+            position: relative;
+            z-index: 2;
+            display: block;
+            width: 100%;
+        }
+
+        .hero__description {
+            color: #fff;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 2rem 0;
+            max-width: 600px;
+            text-align: justify;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero__content {
+            text-align: left;
+        }
+
+        .hero__logo {
+            width: 140px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        }
+
+        .hero__subtitle {
+            color: var(--color-accent);
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+            font-size: 1.5rem;
+        }
+
+        .hero__title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .hero__description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin: 2rem 0;
+            max-width: 600px;
+            text-align: justify;
+        }
+
+        .hero__portrait-box {
+            text-align: center;
+        }
+
+        .hero__portrait {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .hero__portrait-name {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero__portrait-title {
+            color: #fff;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: -5px;
+        }
+
+        /* Sejarah Section Slider Fix */
+        .sejarah {
+            background: url('assets/sejarah-bg.png') center/cover no-repeat fixed;
+            padding: 100px 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .sejarah__container {
+            max-width: 800px;
+            margin-left: 10%;
+        }
+
+        .sejarah__slide {
+            display: none;
+            color: #fff;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .sejarah__slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn--blue {
+            background-color: #0047FF;
+            color: #fff;
+            border-radius: 0;
+            padding: 15px 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: background 0.3s ease;
+        }
+
+        .btn--blue:hover {
+            background-color: #0036cc;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="nav-brand">
-                <img src="images/logo.png" alt="Logo Kasepuhan Gelaralam" class="nav-logo">
-                <span class="nav-brand-text">Kasepuhan Gelaralam</span>
-            </a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Beranda</a></li>
-                <li><a href="#about" class="nav-link">Tentang</a></li>
-                <li><a href="#heritage" class="nav-link">Warisan</a></li>
-                <li><a href="#gallery" class="nav-link">Galeri</a></li>
-                <li><a href="#visit" class="nav-link">Kunjungi</a></li>
-                <li><a href="#contact" class="nav-link">Kontak</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container nav__container"
+                style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <a href="#" class="nav__brand"
+                    style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff;">
+                    <img src="assets/logo.png" alt="Logo Kasepuhan" style="height: 50px;">
+                    <span style="font-weight: 700; letter-spacing: 1px;">KASEPUHAN GELARALAM</span>
+                </a>
+                <button class="nav__toggle" id="nav-toggle">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li><a href="#beranda" class="nav__link active">Beranda</a></li>
+                    <li><a href="#sejarah" class="nav__link">Tentang Kami</a></li>
+                    <li><a href="#budaya" class="nav__link">Upacara Adat</a></li>
+                    <li><a href="#jadwal" class="nav__link">Jadwal</a></li>
+                    <li><a href="#galeri" class="nav__link">Galeri</a></li>
+                    <li><a href="#kontak" class="nav__link">Testimoni</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title animate-fade-in">Kasepuhan Gelaralam</h1>
-            <p class="hero-subtitle animate-fade-in-delay">Jelajahi Keajaiban Warisan Budaya Indonesia</p>
-            <a href="#about" class="btn btn-primary animate-fade-in-delay-2">Mulai Petualangan</a>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+    <section class="hero" id="beranda">
+        <div class="container hero__container" style="display: block;">
+            <!-- Content -->
+            <div class="hero__content" style="max-width: 800px;">
+                <img src="assets/logo.png" alt="Logo Kasepuhan" class="hero__logo">
+                <span class="hero__subtitle">KASEPUHAN</span>
+                <h1 class="hero__title">GELARALAM</h1>
+                <p class="hero__description">
+                    Kasepuhan Gelaralam merupakan salah satu masyarakat adat yang ada di Jawa Barat. Kasepuhan ini
+                    sampai sekarang masih teguh menjalankan adat istiadat leluhurnya secara turun-temurun. Masyarakat
+                    Kasepuhan Gelaralam sangat erat kaitannya dengan padi, segala aktivitas masyarakatnya terpusat pada
+                    sistem pertanian padi. Hal ini terlihat dengan adanya beberapa upacara adat yang dilakukan dalam
+                    setahun yaitu: ngaseuk (menanam), mipit (memanen), ngunjal (mengangkut padi), ngadiukeun (menyimpan
+                    padi ke lumbung), nutu (menumbuk padi), nganyaran (mencicipi nasi dari panen baru), séréntaun
+                    (syukuran panen), dan lain-lain.
+                </p>
+                <div class="hero__identity-labels" style="margin-top: 40px;">
+                    <h4 class="hero__portrait-name" style="margin-top: 0;">ABAH UGI SUGRIANA RAKASIWI</h4>
+                    <p class="hero__portrait-title">KETUA ADAT KASEPUHAN GELARALAM</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- Sejarah Section -->
+    <section class="sejarah" id="sejarah">
+        <div class="container sejarah__container">
+            <h3 style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase;">
+                TENTANG KAMI</h3>
+            <h2
+                style="font-family: 'Times New Roman', serif; font-size: 5rem; color: #fff; margin-top: -20px; text-transform: uppercase; font-weight: 400; margin-bottom: 2rem;">
+                SEJARAH</h2>
+
+            <div class="sejarah__slider-container">
+                <p class="sejarah__slide active">Jika meninjau sejarah dan perkembangan rorokan (lembaga) adat, hal ini
+                    sangat erat kaitannya dengan sejarah kasepuhan. Kasepuhan Ciptagelar merupakan salah satu kampung
+                    adat yang menjadi pusat pemerintahan dari 568 kampung di tiga kabupaten, yaitu Kabupaten Sukabumi,
+                    Kabupaten Bogor, dan Kabupaten Lebak Banten. Kata "Kasepuhan" asal katanya berasal dari kata /sepuh/
+                    yang artinya seseorang yang dituakan, yang ditandai dengan adanya pemimpin adat yang biasa disebut
+                    Abah.</p>
+                <p class="sejarah__slide">Kasepuhan Ciptagelar, berdasarkan sistem kepemimpinannya, memiliki kebiasaan
+                    ngalalakon atau berpindah dari satu tempat ke tempat lain. Hal ini dilakukan ketika pemimpin atau
+                    Abah sudah mendapatkan wangsit dari para leluhur (karuhun). Kasepuhan akan pindah ke lokasi yang
+                    dijadikan tempat petualangan berikutnya yang disebut awisan. Awisan (tempat yang disediakan) sudah
+                    ada sejak sistem pembagian wilayah adat zaman leluhur dahulu, yang menjadi kepercayaan yang sering
+                    disebut uga (ramalan sejarah). Kasepuhan Ciptagelar mulai melaksanakan tradisi berpindah ini sejak
+                    tahun 1368 M, kira-kira 652 tahun yang lalu, agar kasepuhan tidak terkena perubahan zaman yang
+                    merusak (owah gingsir).</p>
+                <p class="sejarah__slide">Kasepuhan Ciptagelar saat ini dipimpin oleh Abah Ugi Sugriana Rakasiwi sejak
+                    tahun 2007. Sebelumnya dipimpin oleh ayahandanya yaitu (Alm) Abah Encup Sucipta atau Abah Anom. Abah
+                    Ugi dalam memimpin kasepuhan dibantu oleh Barés Kolot yang dinamakan barés rorokan (jajaran
+                    perangkat adat). Jumlah baris (barés) rorokan bisa bertambah sesuai dengan perkembangan zaman.
+                    Kasepuhan Ciptagelar ditandai dengan adanya bukti makam, mulai dari Cipatat Bogor tahun 1368 M
+                    sampai sekarang. Ciri tersebut bisa disebut juga talapakan atau tarikolot, yaitu tempat-tempat yang
+                    pernah dijadikan lokasi bermukimnya kasepuhan. Berikut di bawah ini merupakan beberapa data
+                    perpindahan (ngalalakon) berdasarkan sistem kepemimpinan pemimpin adat.</p>
+                <p class="sejarah__slide">Ada 28 tarikolot atau tempat perjalanan (ngalalakon) kasepuhan dari satu
+                    kampung ke kampung lainnya. Menurut sejarah, kasepuhan sudah berdiri sejak beberapa tahun silam,
+                    namun jejak atau peninggalan yang memiliki titimangsa (catatan waktu) dimulai pada tahun 1368 M.
+                    Tokoh yang pertama memimpin adalah Aki Buyut Rosa yang makamnya sekarang berada di Cipatat, Bogor.
+                    Perjalanan diteruskan mulai dari Cipatat Bogor 1368 M oleh Aki Buyut Gondok dari tahun 1556 M;
+                    berpindah dari Cipatat Bogor ke Ciparahu, pindah ke Jasinga, Kembang Kuning Banten, Muncang Koléang,
+                    Kadu Luhur, Leuwi Ruruh, Bongkok, Lebak Binong, hingga Lebak Larang sampai tahun 1729 M.</p>
+                <p class="sejarah__slide">Selanjutnya, kasepuhan diteruskan oleh Aki Buyut Kayon dari tahun 1729 M; dari
+                    Lebak Larang pindah ke Cisungsang (Cibéas), lalu pindah ke Lebak Binong pada 1797 M. Ketika Aki
+                    Buyut Kayon meninggal dunia, Aki Buyut Arikin masih dalam keadaan kanak-kanak (léléngkah halu),
+                    sehingga kasepuhan dititipkan terlebih dahulu kepada Aki Buyut Santayan; pindah ke Cidongkap,
+                    Cukcrukan, Surandil, hingga ke Pasir Talaga tahun 1832 M. Selama 35 tahun Aki Buyut Santayan
+                    dititipi Kasepuhan, hingga akhirnya pada tahun 1832 M Aki Buyut Arikin sudah cukup umur, kasepuhan
+                    dikembalikan lagi kepadanya, lalu pindah ke Lebak Limus Tegalumbu, pindah ke Cibeber, pindah ke
+                    Cianet, hingga ke Tegalumbu tahun 1895.</p>
+                <p class="sejarah__slide">Seterusnya kasepuhan diteruskan oleh Aki Buyut Jasiun dari Tegalumbu; pindah
+                    ke Cicadas, pindah ke Cijangkorang, hingga ke Bojong Cisono sampai tahun 1937 M. Pada masa
+                    kepemimpinan Uyut (Jasiun) mulai membagi-bagi lagi aturan seperti: mulai bersawah untuk memanfaatkan
+                    air dan aturan-aturan lainnya hingga sekarang.</p>
+                <p class="sejarah__slide">Setelah Aki Buyut Jasiun meninggal dunia, kepemimpinan kasepuhan diwariskan
+                    kepada keturunannya yaitu Abah Rusdi. Dari tahun 1937 M, Aki Buyut Rusdi pindah ke Cicemét, pindah
+                    lagi ke Sirnaresmi, hingga beliau wafat. Aki Buyut Rusdi dimakamkan di Pasir Jeungjing (Sirnaresmi),
+                    memimpin sekitar 23 tahun. Dari sana kasepuhan dipimpin oleh Abah Arjo yang pindah dari Sirnaresmi
+                    ke Sirnarasa, pindah lagi hingga ke Linggarjati. Abah Arjo meninggal dunia di Linggarjati pada tahun
+                    1982 yang diteruskan oleh Abah Encup Sucipta (Abah Anom). Abah Encup Sucipta memimpin Kasepuhan
+                    dalam usia 17 tahun. Pada masa kepemimpinan Abah Encup, Kasepuhan pindah dari Linggarjati ke
+                    Ciptarasa tahun 1984. Saat Kasepuhan berada di Ciptarasa, kasepuhan pecah menjadi tiga.</p>
+                <p class="sejarah__slide">Abah Arjo memiliki empat istri yaitu Ema Yaya, Ema Uu, Ema Tarsih, dan Ema
+                    Isah. Ema Yaya memiliki anak yaitu Ua Uum, Ua Nyai, Ua Ujat, dan Ua Uhén. Ema Uu tidak memiliki
+                    putra. Ema Tarsih memiliki putra Abah Encup, Ibi Iis, dan Ibi Lia. Karena Ema Uu tidak memiliki
+                    putra, Abah Encup dibawa oleh Ema Uu saat umur tiga tahun dan diangkat sebagai putranya. Ema Isah
+                    memiliki putra Amang Épi, Amang Éka, Ibi Étih, dan Amang Éndra. Karena garis keturunan diturunkan
+                    kepada keturunan yang lahir saat menjabat (memegang kekuasaan), Abah Arjo selaku pemimpin Kasepuhan
+                    Linggarjati mewasiatkan kasepuhan kepada Abah Encup Sucipta yang sekarang diteruskan oleh Abah Ugi.
+                    Abah Encup yang meneruskan kasepuhan sebab saat Abah Uum dan Abah Ujat lahir, kasepuhan masih
+                    dipegang oleh Uyut Rusdi. Setelah kasepuhan dipegang oleh Abah Encup di Ciptarasa, sekitar tahun
+                    1986 Kasepuhan dibagi menjadi dua, yaitu Abah Ujat mendirikan kasepuhan di Sirnaresmi yang bertempat
+                    di tarikolot kasepuhan. Ketika Abah Ujat meninggal dunia, Kasepuhan Sirnaresmi diteruskan oleh Abah
+                    Uum karena Abah Asép masih belum dewasa. Saat Abah Asép dewasa, kasepuhan diteruskan oleh Abah Asép,
+                    namun Abah Uum mendirikan lagi kasepuhan yang tempatnya tidak jauh dari Kasepuhan Sirnaresmi yaitu
+                    Kasepuhan Ciptamulya, yang sekarang diteruskan oleh Abah Héndrik.</p>
+            </div>
+
+            <div class="sejarah__dots" style="display: flex; gap: 12px; margin-top: 10px;">
+                <button class="sejarah__dot active" data-slide="0"></button>
+                <button class="sejarah__dot" data-slide="1"></button>
+                <button class="sejarah__dot" data-slide="2"></button>
+                <button class="sejarah__dot" data-slide="3"></button>
+                <button class="sejarah__dot" data-slide="4"></button>
+                <button class="sejarah__dot" data-slide="5"></button>
+                <button class="sejarah__dot" data-slide="6"></button>
+                <button class="sejarah__dot" data-slide="7"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upacara Adat Section -->
+    <section class="ngaseuk" id="budaya">
+        <button class="ngaseuk__nav ngaseuk__nav--prev" id="budaya-prev" aria-label="Previous slide">&lsaquo;</button>
+        <button class="ngaseuk__nav ngaseuk__nav--next" id="budaya-next" aria-label="Next slide">&rsaquo;</button>
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tentang Kasepuhan</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Mengenal lebih dekat tentang tradisi dan budaya yang lestari</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Selamat Datang di Kasepuhan Gelaralam</h3>
-                    <p>Kasepuhan Gelaralam adalah sebuah komunitas adat yang masih mempertahankan tradisi dan kearifan
-                        lokal leluhur. Terletak di tengah keindahan alam yang memukau, Kasepuhan ini menjadi saksi hidup
-                        peradaban Sunda yang telah berusia ratusan tahun.</p>
-                    <p>Di sini, Anda akan menemukan kehidupan yang harmonis antara manusia dan alam, dimana setiap
-                        ritual dan tradisi memiliki makna mendalam yang terkait dengan pelestarian lingkungan dan
-                        keseimbangan alam.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">🏛️</div>
-                            <h4>Arsitektur Tradisional</h4>
-                            <p>Rumah adat dengan konstruksi kayu tanpa paku</p>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🌾</div>
-                            <h4>Pertanian Tradisional</h4>
-                            <p>Sistem irigasi dan bercocok tanam organik</p>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">🎭</div>
-                            <h4>Upacara Adat</h4>
-                            <p>Ritual yang masih dilaksanakan hingga kini</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="images/house.png" alt="Rumah Adat Kasepuhan Gelaralam" loading="lazy">
-                </div>
+            <div class="ngaseuk__slider" id="budaya-slider">
+                <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Heritage Section -->
-    <section class="heritage" id="heritage">
+    <!-- Timeline/Jadwal -->
+    <section class="timeline" id="jadwal" style="padding: 100px 0; background: #ffffff;">
+        <div class="container" style="text-align: left;">
+            <h2
+                style="font-family: 'Times New Roman', serif; font-size: 3rem; color: #1a1a1a; margin: 0; text-transform: uppercase; font-weight: 400; line-height: 1.1;">
+                JADWAL ACARA KEGIATAN ADAT 2026</h2>
+            <h3
+                style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 5px; margin-bottom: 3rem; font-size: 1.2rem;">
+                KASEPUHAN GELARALAM</h3>
+            <div id="timeline-container" class="timeline__container"></div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="galeri">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Warisan Budaya</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Kekayaan tradisi yang diwariskan turun-temurun</p>
+            <h2 class="section__title">GALERI</h2>
+            <div class="gallery__filters">
+                <button class="filter-btn active" data-filter="all">SEMUA</button>
+                <button class="filter-btn" data-filter="adat">UPACARA ADAT</button>
+                <button class="filter-btn" data-filter="life">KEHIDUPAN</button>
+                <button class="filter-btn" data-filter="craft">KERAJINAN</button>
             </div>
-            <div class="heritage-grid">
-                <div class="heritage-card">
-                    <div class="heritage-image">
-                        <img src="images/ceremony.png" alt="Upacara Adat">
-                    </div>
-                    <div class="heritage-content">
-                        <h3>Upacara Adat</h3>
-                        <p>Kasepuhan Gelaralam memiliki berbagai upacara adat yang sakral, termasuk Seren Taun (pesta
-                            panen), yang menjadi perayaan syukur atas hasil pertanian. Upacara ini melibatkan seluruh
-                            masyarakat dalam ritual yang penuh makna spiritual.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <div class="heritage-image">
-                        <img src="images/crafts.png" alt="Kerajinan Tradisional">
-                    </div>
-                    <div class="heritage-content">
-                        <h3>Kerajinan Tangan</h3>
-                        <p>Masyarakat Kasepuhan terkenal dengan keahlian mereka dalam membuat kerajinan tangan seperti
-                            anyaman bambu, tenun tradisional, dan gerabah. Setiap karya merupakan hasil keterampilan
-                            yang diwariskan dari generasi ke generasi.</p>
-                    </div>
-                </div>
-                <div class="heritage-card">
-                    <div class="heritage-image">
-                        <img src="images/terraces.png" alt="Pertanian Tradisional">
-                    </div>
-                    <div class="heritage-content">
-                        <h3>Pertanian Lestari</h3>
-                        <p>Sawah terasering yang indah dan sistem pertanian organik menjadi bukti kearifan lokal dalam
-                            menjaga keseimbangan ekosistem. Metode bercocok tanam tradisional ini telah terbukti ramah
-                            lingkungan dan berkelanjutan.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="gallery__grid" id="gallery-grid"></div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="kontak">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Galeri Foto</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Keindahan yang diabadikan dalam gambar</p>
-            </div>
-            <div class="gallery-grid" id="gallery-grid">
-                <div class="gallery-item" data-index="0">
-                    <img src="images/hero.png" alt="Pemandangan Kasepuhan" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Pemandangan Desa</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-index="1">
-                    <img src="images/house.png" alt="Rumah Adat" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Rumah Adat</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-index="2">
-                    <img src="images/ceremony.png" alt="Upacara Tradisional" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Upacara Adat</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-index="3">
-                    <img src="images/crafts.png" alt="Kerajinan" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Kerajinan Tangan</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-index="4">
-                    <img src="images/terraces.png" alt="Sawah Terasering" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-caption">Sawah Terasering</span>
-                    </div>
-                </div>
+            <h2 class="section__title">TESTIMONI</h2>
+
+            <div class="testimonials__grid" id="testimonials-grid">
+                <!-- Populated by JS -->
             </div>
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
-        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#10094;</button>
-        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#10095;</button>
-        <img src="" alt="" id="lightbox-image">
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-
-    <!-- Visit Section -->
-    <section class="visit" id="visit">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Informasi Kunjungan</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Rencanakan kunjungan Anda ke Kasepuhan Gelaralam</p>
-            </div>
-            <div class="visit-grid">
-                <div class="visit-card">
-                    <div class="visit-icon">🕒</div>
-                    <h3>Jam Operasional</h3>
-                    <p><strong>Setiap Hari</strong></p>
-                    <p>08:00 - 17:00 WIB</p>
-                    <p class="visit-note">Untuk kunjungan grup, harap reservasi minimal 3 hari sebelumnya</p>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-icon">💰</div>
-                    <h3>Harga Tiket</h3>
-                    <p><strong>Domestik:</strong> t.b.a</p>
-                    <p><strong>Mancanegara:</strong> t.b.a</p>
-                    <p class="visit-note">Termasuk guide lokal dan dokumentasi</p>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-icon">🎯</div>
-                    <h3>Aktivitas</h3>
-                    <p>• Tur Budaya</p>
-                    <p>• Workshop Kerajinan</p>
-                    <p>• Trekking Alam</p>
-                    <p>• Fotografi</p>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-icon">📍</div>
-                    <h3>Lokasi</h3>
-                    <p>Desa Sirnaresmi</p>
-                    <p>Kecamatan Cisolok</p>
-                    <p>Kabupaten Sukabumi</p>
-                    <p>Jawa Barat, Indonesia</p>
-                </div>
-            </div>
-            <div class="visit-cta">
-                <h3>Butuh Bantuan Merencanakan Perjalanan?</h3>
-                <p>Tim kami siap membantu Anda merencanakan kunjungan yang tak terlupakan</p>
-                <a href="#contact" class="btn btn-primary">Hubungi Kami</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Hubungi Kami</h2>
-                <div class="section-divider"></div>
-                <p class="section-description">Kami siap menjawab pertanyaan Anda</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@gelaralam.id</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>+62 812-2241-0859</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">💬</div>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>+62 812-2241-0859</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <h4>Media Sosial</h4>
-                            <p>@kasepuhangelaralamofficial</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nama</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Pesan</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Kasepuhan Gelaralam</h3>
-                    <p>Melestarikan warisan budaya untuk generasi mendatang</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Navigasi</h4>
-                    <ul>
-                        <li><a href="#home">Beranda</a></li>
-                        <li><a href="#about">Tentang</a></li>
-                        <li><a href="#heritage">Warisan</a></li>
-                        <li><a href="#gallery">Galeri</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Informasi</h4>
-                    <ul>
-                        <li><a href="#visit">Kunjungi</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Syarat & Ketentuan</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Ikuti Kami</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">📘</a>
-                        <a href="https://www.instagram.com/kasepuhangelaralamofficial" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                    </div>
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <img src="assets/logo.png" alt="Logo Kasepuhan" class="footer__logo">
+            </div>
+
+            <div class="footer__subscribe">
+                <h4>Subscribe to Kasepuhan Gelaralam via Email</h4>
+                <p style="margin-bottom: 1rem;">Latest news, musings, announcements and updates direct to your inbox.
+                </p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="footer__contact-info"
+                    style="margin-top: 1.5rem; display: flex; align-items: center; gap: 10px; color: var(--color-text-light); font-weight: 500;">
+                    <i class="fa-solid fa-phone" style="color: var(--color-accent);"></i>
+                    <a href="tel:+6281222410859"
+                        style="text-decoration: none; color: inherit; transition: color 0.3s ease;">+62
+                        812-2241-0859</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kasepuhan Gelaralam. All rights reserved.</p>
+
+            <div class="footer__sitemap">
+                <h4 class="footer__title">SITEMAP</h4>
+                <ul class="footer__links">
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#sejarah">Tentang Kami</a></li>
+                    <li><a href="#budaya">Upacara Adat</a></li>
+                    <li><a href="#jadwal">Jadwal Adat</a></li>
+                    <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#kontak">Testimoni</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__socials-box">
+                <h4 class="footer__title">SOSIAL</h4>
+                <div class="footer__socials">
+                    <a href="https://www.instagram.com/kasepuhangelaralamofficial/" target="_blank"
+                        rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="mailto:info@gelaralam.id" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 Kasepuhan Gelaralam. All Rights Reserved. | <a href="admin.html"
+                        style="opacity: 0.5; font-size: 0.8rem;">Admin Login</a></p>
             </div>
         </div>
     </footer>
 
-    <script type="module" src="js/main.js"></script>
+    <!-- SCRIPT UTAMA -->
+    <script>
+        // DATA
+        const budayaData = [
+            { title: 'NGASEUK', b: 'assets/budaya-bg.png', d: 'Upacara adat ngaseuk merupakan kegiatan menanam padi di ladang (huma). Seluruh masyarakat Kasepuhan Gelaralam yang sudah menikah (rarabi) diwajibkan untuk menanam padi di ladang. Adapun yang belum menikah hanya sekadar membantu orang tua atau keluarganya yang akan menjalankan kegiatan ngaseuk. Menurut Aki Koyod, hal ini dilaksanakan karena harus adanya kerja sama antara laki-laki dan perempuan dalam pelaksanaan ngaseuk. Oleh karena itu, apabila yang menikah tersebut kehilangan salah satunya (meninggal) atau bercerai (papirak), maka tidak bisa lagi melaksanakan upacara adat ngaseuk.' },
+            { title: 'MIPIT', b: 'assets/mipit-bg.jpg', d: 'Upacara adat mipit merupakan kegiatan memetik atau memanen padi. Dilakukan di ladang (huma) juga di sawah, namun yang utama dilakukan di ladang.' },
+            { title: 'NGANYARAN', b: 'assets/tradisi-3.png', d: 'Nganyaran merupakan kegiatan yang dilakukan untuk menanak nasi dari beras pertama yang dipanen di tahun baru. Sebelum nganyaran, biasanya seminggu sebelumnya diadakan nutu nganyaran (menumbuk padi pertama). Nutu nganyaran dimulai oleh Ema, kemudian diteruskan oleh incu putu (warga adat) dari berbagai daerah.' },
+            { title: 'NGADIUKEUN', b: 'assets/tradisi-4.png', d: 'Ngadiukeun merupakan kegiatan ritual yang dilaksanakan di Leuit (lumbung padi). Setelah padi dari ladang (huma) maupun sawah diangkut (diunjal), dilaksanakan ritual ngadiukeun padi, yaitu mendudukkan (menempatkan secara resmi) padi di dalam lumbung.' },
+            { title: 'SERENTAUN', b: 'assets/tradisi-5.png', d: 'Serentaun sering disebut juga séréntaun. Serentaun memiliki arti menyerahkan hasil bumi kepada Yang Maha Memiliki (Tuhan). Dilaksanakan melalui beberapa (rangkaian) syukuran, kirim doa, serta selamatan.' }
+        ];
+
+        const timelineData = [
+            { id: 1, date: '1 PEBRUARI', title: 'PANGANGGOAN 14 NA RUAH', description: 'Opat belasna merupakan kegiatan yang dilakukan sebulan sekali.' },
+            { id: 2, date: '4 PEBRUARI', title: 'SIDKAH RUAH REBO 16 RUAH', description: 'Upacara adat yang berkaitan dengan aspek keagamaan' },
+            { id: 3, date: '11 PEBRUARI', title: 'TUTUP NYAMBUT 23 RUAH', description: 'Tutup nyambut dilaksanakan untuk menjadi tanda atau sandi kasepuhan.' },
+            { id: 4, date: '24 PEBRUARI', title: 'PAMAGERAN SALASA 7 PUASA', description: 'Pamageran dilaksanakan untuk memagari seluruh kegiatan pertanian.' },
+            { id: 5, date: '2 MARET', title: 'PANGANGGOAN 14 NA PUASA', description: 'Opat belasna merupakan kegiatan yang dilakukan sebulan sekali.' },
+            { id: 6, date: '5 MARET', title: 'PANYIRAMAN KEMIS 16 PUASA', description: 'Panyiraman atau Salamet Mapag Paré Nyiram dilakukan ketika padi sudah mulai tumbuh bulir atau nyiram (Paré Beukah) baik di huma dan disawah, dilaksanakan selametan atau syukuran agar padi tumbuh dengan baik dan terhidar dari hama.' },
+            { id: 7, date: '23 MARET', title: 'PANYIMURAN SENEN 4 SAWAL', description: 'Kegiatan nyimur dilakukan untuk inisiasi bayi baru lahir.' },
+            { id: 8, date: '31 MARET', title: 'BEBERES PANYIMURAN SALASA 12 SAWAL', description: 'Kegiatan nyimur dilakukan untuk inisiasi bayi baru lahir.' },
+            { id: 9, date: '1 APRIL', title: 'PANGANGGOAN 14 NA SAWAL', description: 'Panganggoan Hajat keinginan Abah hendak mengkhitanan (sunatan)' }
+        ];
+
+        const galleryItems = [
+            { cat: 'life', title: 'Masyarakat Adat', img: 'assets/gallery/gallery-1.jpg' },
+            { cat: 'adat', title: 'Tradisi Ngunjal Padi', img: 'assets/gallery/gallery-2.jpg' },
+            { cat: 'life', title: 'Kebersamaan Warga', img: 'assets/gallery/gallery-3.jpg' },
+            { cat: 'life', title: 'Kampung Gelaralam', img: 'assets/gallery/gallery-4.png' },
+            { cat: 'adat', title: 'Ritual Nganyaran', img: 'assets/gallery/gallery-5.jpg' },
+            { cat: 'life', title: 'Dokumentasi Budaya', img: 'assets/gallery/gallery-6.jpg' }
+        ];
+
+        const testimonialData = [
+            {
+                name: "Andi Wijaya",
+                origin: "Jakarta",
+                text: "Pengalaman yang luar biasa bisa berkunjung ke Gelaralam. Suasananya sangat tenang dan adat istiadatnya masih terjaga dengan sangat murni. Benar-benar harmoni antara manusia dan alam.",
+                photo: "https://i.pravatar.cc/150?u=1",
+                stars: 5
+            },
+            {
+                name: "Siti Aminah",
+                origin: "Bandung",
+                text: "Kasepuhan Gelaralam adalah laboratorium budaya yang hidup. Belajar tentang filosofi padi dan cara hidup mandiri pangan dari sini adalah ilmu yang sangat berharga bagi generasi muda.",
+                photo: "https://i.pravatar.cc/150?u=2",
+                stars: 5
+            },
+            {
+                name: "Budi Santoso",
+                origin: "Yogyakarta",
+                text: "Sangat terkesan dengan keramahan warga adat. Hidangan nasi baru dari Leuit memiliki rasa yang sangat khas dan nikmat. Wajib dikunjungi bagi pecinta wisata budaya.",
+                photo: "https://i.pravatar.cc/150?u=3",
+                stars: 5
+            }
+        ];
+
+        // LOGIC
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar
+            document.getElementById('nav-toggle').onclick = () => document.getElementById('nav-menu').classList.toggle('active');
+
+            // Sejarah Dots
+            document.querySelectorAll('.sejarah__dot').forEach(dot => {
+                dot.onclick = function () {
+                    const idx = this.dataset.slide;
+                    document.querySelectorAll('.sejarah__dot').forEach(d => d.classList.remove('active'));
+                    document.querySelectorAll('.sejarah__slide').forEach(s => s.classList.remove('active'));
+                    this.classList.add('active');
+                    document.querySelectorAll('.sejarah__slide')[idx].classList.add('active');
+                }
+            });
+
+            // Budaya Slider
+            const slider = document.getElementById('budaya-slider');
+            const section = document.querySelector('.ngaseuk');
+            let curBudaya = 0;
+
+            const renderBudaya = () => {
+                slider.innerHTML = '';
+                budayaData.forEach((item, i) => {
+                    const div = document.createElement('div');
+                    div.className = `ngaseuk__slide ${i === curBudaya ? 'active' : ''}`;
+                    div.innerHTML = `
+                        <h3 style="color: var(--color-accent); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px;">UPACARA ADAT</h3>
+                        <h2 class="ngaseuk__title" style="font-family: 'Times New Roman', serif; font-size: 5rem; color: #fff; margin: 0; text-transform: uppercase; font-weight: 400; margin-bottom: 1.5rem; line-height: 1;">${item.title}</h2>
+                        <p class="ngaseuk__description" style="max-width: 700px; line-height: 1.8;">${item.d}</p>
+                    `;
+                    slider.appendChild(div);
+                });
+                section.style.backgroundImage = `url('${budayaData[curBudaya].b}')`;
+            };
+
+            document.getElementById('budaya-prev').onclick = () => { curBudaya = (curBudaya - 1 + budayaData.length) % budayaData.length; renderBudaya(); };
+            document.getElementById('budaya-next').onclick = () => { curBudaya = (curBudaya + 1) % budayaData.length; renderBudaya(); };
+            renderBudaya();
+
+            // Timeline
+            const tl = document.getElementById('timeline-container');
+            timelineData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'timeline__item';
+                div.innerHTML = `
+                    <div class="timeline__content">
+                        <h3 class="timeline__title" style="font-family: 'Times New Roman', serif; font-weight: 400; font-size: 2.2rem; margin-bottom: 15px;">${item.title}</h3>
+                        <p class="timeline__description" style="margin-bottom: 15px; color: #666;">${item.description}</p>
+                        <div class="timeline__date" style="display: inline-block;">${item.date}</div>
+                    </div>
+                `;
+                tl.appendChild(div);
+            });
+
+            // Gallery
+            const grid = document.getElementById('gallery-grid');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            const renderGallery = (filter = 'all') => {
+                grid.innerHTML = '';
+                const items = filter === 'all' ? galleryItems : galleryItems.filter(i => i.cat === filter);
+                items.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery__item';
+                    div.innerHTML = `<img src="${item.img}" alt="${item.title}"><div class="gallery__item-overlay"><h3>${item.title}</h3></div>`;
+                    grid.appendChild(div);
+                });
+            };
+
+            filterBtns.forEach(btn => {
+                btn.onclick = function () {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    renderGallery(this.dataset.filter);
+                };
+            });
+
+            renderGallery();
+
+            // Testimonials
+            const testimonialGrid = document.getElementById('testimonials-grid');
+            const renderTestimonials = () => {
+                testimonialGrid.innerHTML = '';
+                testimonialData.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'testimonial__card';
+
+                    let starsHtml = '';
+                    for (let i = 0; i < item.stars; i++) {
+                        starsHtml += '<i class="fa-solid fa-star"></i>';
+                    }
+
+                    card.innerHTML = `
+                        <div class="testimonial__stars">${starsHtml}</div>
+                        <p class="testimonial__text">"${item.text}"</p>
+                        <div class="testimonial__author">
+                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo">
+                            <div class="testimonial__details">
+                                <h4 class="testimonial__name">${item.name}</h4>
+                                <span class="testimonial__origin">${item.origin}</span>
+                            </div>
+                        </div>
+                    `;
+                    testimonialGrid.appendChild(card);
+                });
+            };
+
+            renderTestimonials();
+        });
+    </script>
 </body>
 
 </html>
