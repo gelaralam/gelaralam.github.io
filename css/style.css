@@ -826,6 +826,11 @@ button {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .sejarah__dots {
+        justify-content: center;
+        margin-top: 30px;
+    }
 }
 
 
