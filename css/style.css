@@ -219,6 +219,28 @@ button {
     margin-bottom: 3rem;
     color: var(--color-text-muted);
     text-align: justify;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar for Hero Description */
+.hero__description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.hero__description::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.hero__description::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 10px;
+}
+
+.hero__description::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.8);
 }
 
 .hero__identity-labels {
