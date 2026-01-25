@@ -1038,6 +1038,7 @@ button {
 
     .hero {
         text-align: center;
+        background-position: 25% center !important;
     }
 
     .hero__content {
@@ -1052,7 +1053,7 @@ button {
     }
 
     .hero__portrait-name {
-        font-size: 1.8rem !important;
+        font-size: 1.2rem !important;
         margin-bottom: 8px;
     }
 
