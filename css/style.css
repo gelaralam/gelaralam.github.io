@@ -477,7 +477,7 @@ button {
 }
 
 .ngaseuk__indicators {
-    display: flex;
+    display: none;
     gap: 12px;
     margin-top: 3rem;
 }
