@@ -169,20 +169,17 @@ button {
 .hero {
     position: relative;
     min-height: 100vh;
-    background: #000 url('../assets/hero-bg.jpg') center/cover no-repeat;
+    background: url('../assets/abah.jpg?v=3') center top/cover no-repeat !important;
     display: flex;
     align-items: center;
     color: #fff;
     padding-top: 80px;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
-    z-index: 1;
-}
+/* Overlay removed as requested */
+/* .hero::after {
+    display: none;
+} */
 
 
 
