@@ -176,13 +176,7 @@ button {
     padding-top: 80px;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
-    z-index: 1;
-}
+
 
 
 
