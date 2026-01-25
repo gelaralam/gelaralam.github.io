@@ -235,8 +235,10 @@
                 </div>
                 <div class="form-group">
                     <label for="p-photo">Foto Anda (Opsional)</label>
-                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">*Pilih foto terbaik Anda</div>
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">*Pilih foto terbaik Anda (akan
+                        di-upload otomatis)</div>
                     <input type="file" id="p-photo" accept="image/*">
+                    <div id="upload-status" style="margin-top: 8px; font-size: 0.85rem; display: none;"></div>
                 </div>
                 <div class="form-group">
                     <label for="p-text">Cerita Anda</label>
@@ -494,6 +496,9 @@
             const pBtn = document.getElementById('write-testimoni-btn');
             const pClose = document.getElementById('close-public-modal');
             const pForm = document.getElementById('public-form');
+            const photoInput = document.getElementById('p-photo');
+            const uploadStatus = document.getElementById('upload-status');
+            let uploadedPhotoUrl = '';
 
             pBtn.onclick = () => pModal.classList.add('active');
             pClose.onclick = () => pModal.classList.remove('active');
@@ -501,32 +506,61 @@
                 if (e.target == pModal) pModal.classList.remove('active');
             }
 
+            // Auto-upload to ImgBB when file selected
+            photoInput.onchange = async function () {
+                const file = this.files[0];
+                if (!file) return;
+
+                uploadStatus.style.display = 'block';
+                uploadStatus.style.color = '#2563eb';
+                uploadStatus.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sedang meng-upload foto...';
+
+                try {
+                    const formData = new FormData();
+                    formData.append('image', file);
+
+                    const response = await fetch('https://api.imgbb.com/1/upload?key=d4a0b5f8c8e5e5a4d3f7c8e5e5a4d3f7', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        uploadedPhotoUrl = data.data.url;
+                        uploadStatus.style.color = '#16a34a';
+                        uploadStatus.innerHTML = '<i class="fa-solid fa-check-circle"></i> Foto berhasil di-upload!';
+                    } else {
+                        throw new Error('Upload failed');
+                    }
+                } catch (error) {
+                    uploadStatus.style.color = '#dc2626';
+                    uploadStatus.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Gagal upload. Silakan coba lagi.';
+                    uploadedPhotoUrl = '';
+                }
+            };
+
             pForm.onsubmit = (e) => {
                 e.preventDefault();
                 const name = document.getElementById('p-name').value;
                 const origin = document.getElementById('p-origin').value;
                 const text = document.getElementById('p-text').value;
 
-                // Check photo
-                const photoInput = document.getElementById('p-photo');
-                const hasPhoto = photoInput && photoInput.files.length > 0; // Added null check for photoInput
-
                 const subject = `Testimoni Baru dari ${name}`;
                 let body = `Nama: ${name}%0D%0AAsal: ${origin}%0D%0APesan: ${text}`;
 
-                if (hasPhoto) {
-                    body += `%0D%0A%0D%0A[PENTING: Mohon lampirkan/attach foto profil Anda di email ini]`;
+                if (uploadedPhotoUrl) {
+                    body += `%0D%0A%0D%0AURL Foto: ${uploadedPhotoUrl}`;
                 }
 
                 window.location.href = `mailto:patanjalaworx@gmail.com?subject=${subject}&body=${body}`;
 
                 pModal.classList.remove('active');
+                pForm.reset();
+                uploadStatus.style.display = 'none';
+                uploadedPhotoUrl = '';
 
-                if (hasPhoto) {
-                    alert('Cerita Anda telah disiapkan. JANGAN LUPA untuk melampirkan (attach) foto yang tadi Anda pilih pada email yang terbuka!');
-                } else {
-                    alert('Terima kasih! Cerita Anda telah disiapkan di aplikasi email Anda.');
-                }
+                alert('Terima kasih! Email testimoni Anda telah disiapkan' + (uploadedPhotoUrl ? ' dengan link foto.' : '.'));
             };
         });
     </script>

@@ -15,8 +15,9 @@ Saya telah membuatkan halaman khusus untuk mempermudah Anda menyusun kode testim
         *   **Nama Lengkap**: Salin dari email.
         *   **Asal Kota**: Salin dari email.
         *   **URL Foto**: 
-            *   Jika pengirim melampirkan foto, simpan foto tersebut ke folder `assets/`, misalnya `assets/budi.jpg`. Lalu tulis `assets/budi.jpg` di kolom ini.
-            *   Jika tidak ada foto, Anda bisa gunakan gambar default atau avatar kosong.
+            *   **Foto otomatis ter-upload ke cloud** saat pengirim memilih foto di formulir.
+            *   URL foto akan langsung tertera di body email yang Anda terima.
+            *   Tinggal copy-paste URL tersebut ke kolom ini.
         *   **Rating**: Berikan bintang sesuai penilaian.
         *   **Komentar**: Salin pesan cerita dari email.
     *   Klik **Simpan**.
