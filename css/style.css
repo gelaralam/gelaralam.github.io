@@ -200,7 +200,7 @@ button {
     letter-spacing: 4px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .hero__title {
@@ -213,7 +213,7 @@ button {
 
 .hero__description {
     font-size: 1.1rem;
-    line-height: 1.5;
+    line-height: 1.2;
     margin-bottom: 3rem;
     color: var(--color-text-muted);
     text-align: justify;
