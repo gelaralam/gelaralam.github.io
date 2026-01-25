@@ -15,9 +15,10 @@ Saya telah membuatkan halaman khusus untuk mempermudah Anda menyusun kode testim
         *   **Nama Lengkap**: Salin dari email.
         *   **Asal Kota**: Salin dari email.
         *   **URL Foto**: 
-            *   **Foto otomatis ter-upload ke cloud** saat pengirim memilih foto di formulir.
-            *   URL foto akan langsung tertera di body email yang Anda terima.
-            *   Tinggal copy-paste URL tersebut ke kolom ini.
+            *   Foto akan dikirim sebagai **attachment email** (bukan URL).
+            *   **Download** attachment dari email ke folder `assets/testimonials/`.
+            *   Rename file jika perlu (misal: `budi-jakarta.jpg`).
+            *   Tulis path di kolom ini: `assets/testimonials/budi-jakarta.jpg`.
         *   **Rating**: Berikan bintang sesuai penilaian.
         *   **Komentar**: Salin pesan cerita dari email.
     *   Klik **Simpan**.
