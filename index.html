@@ -161,6 +161,7 @@
 
     <!-- Upacara Adat Section -->
     <section class="ngaseuk" id="budaya">
+        <div class="ngaseuk__bg" id="budaya-bg"></div>
         <button class="ngaseuk__nav ngaseuk__nav--prev" id="budaya-prev" aria-label="Previous slide">&lsaquo;</button>
         <button class="ngaseuk__nav ngaseuk__nav--next" id="budaya-next" aria-label="Next slide">&rsaquo;</button>
         <div class="container ngaseuk__container">
@@ -366,8 +367,8 @@
                 });
 
                 // Set background with transition effect
-                const bgUrl = budayaData[curBudaya].b;
-                section.style.setProperty('--bg-image', `url('${bgUrl}')`);
+                const bgDiv = document.getElementById('budaya-bg');
+                bgDiv.style.backgroundImage = `url('${budayaData[curBudaya].b}')`;
             };
 
             document.getElementById('budaya-prev').onclick = () => { curBudaya = (curBudaya - 1 + budayaData.length) % budayaData.length; renderBudaya(); };
