@@ -1046,8 +1046,18 @@ button {
 
     .hero__identity-labels {
         border-left: none;
-        padding-left: 0;
+        padding: 20px;
         margin-top: 30px;
+        justify-content: center;
+    }
+
+    .hero__portrait-name {
+        font-size: 1.8rem !important;
+        margin-bottom: 8px;
+    }
+
+    .hero__portrait-title {
+        font-size: 0.9rem !important;
     }
 
     .hero__logo {
