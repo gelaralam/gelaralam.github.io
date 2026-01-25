@@ -206,7 +206,7 @@ button {
 .hero__title {
     font-family: 'Times New Roman', serif;
     font-weight: normal !important;
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.5rem, 4vw, 3rem);
     line-height: 1;
     margin-bottom: 1.5rem;
 }
@@ -251,8 +251,8 @@ button {
 }
 
 .hero__portrait-name {
-    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-    font-weight: normal;
+    font-size: clamp(0.9rem, 2vw, 1.4rem);
+    font-weight: normal !important;
     font-family: 'Times New Roman', serif;
     margin-bottom: 8px;
     color: #fff;
