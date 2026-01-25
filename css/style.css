@@ -1084,8 +1084,8 @@ button {
     }
 
     .sejarah__content {
-        max-height: none;
-        overflow: visible;
+        max-height: 350px;
+        overflow-y: auto;
         background: rgba(0, 0, 0, 0.5);
         padding: 25px;
         border-radius: 12px;
