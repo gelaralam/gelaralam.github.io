@@ -367,7 +367,7 @@
 
                 // Set background with transition effect
                 const bgUrl = budayaData[curBudaya].b;
-                section.style.setProperty('--bg-image', `url('${bgUrl}?v=${new Date().getTime()}')`);
+                section.style.setProperty('--bg-image', `url('${bgUrl}')`);
             };
 
             document.getElementById('budaya-prev').onclick = () => { curBudaya = (curBudaya - 1 + budayaData.length) % budayaData.length; renderBudaya(); };
