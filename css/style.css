@@ -206,14 +206,14 @@ button {
 .hero__title {
     font-family: 'Times New Roman', serif;
     font-weight: normal !important;
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-size: clamp(2rem, 6vw, 4.5rem);
     line-height: 1;
     margin-bottom: 1.5rem;
 }
 
 .hero__description {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.5;
     margin-bottom: 3rem;
     color: var(--color-text-muted);
     text-align: justify;
