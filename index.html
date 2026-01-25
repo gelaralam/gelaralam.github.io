@@ -366,7 +366,8 @@
                 });
 
                 // Set background with transition effect
-                section.style.setProperty('--bg-image', `url('${budayaData[curBudaya].b}')`);
+                const bgUrl = budayaData[curBudaya].b;
+                section.style.setProperty('--bg-image', `url('${bgUrl}?v=${new Date().getTime()}')`);
             };
 
             document.getElementById('budaya-prev').onclick = () => { curBudaya = (curBudaya - 1 + budayaData.length) % budayaData.length; renderBudaya(); };
