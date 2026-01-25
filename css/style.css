@@ -205,6 +205,7 @@ button {
 
 .hero__title {
     font-family: 'Times New Roman', serif;
+    font-weight: 400;
     font-size: clamp(3rem, 10vw, 6rem);
     line-height: 1;
     margin-bottom: 1.5rem;
