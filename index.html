@@ -506,16 +506,24 @@
                 if (e.target == pModal) pModal.classList.remove('active');
             }
 
-            // Auto-upload to Catbox when file selected
+            // Auto-upload to Telegraph when file selected
             photoInput.onchange = async function () {
                 const file = this.files[0];
                 if (!file) return;
 
-                // Validate file size (max 20MB)
-                if (file.size > 20 * 1024 * 1024) {
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
                     uploadStatus.style.display = 'block';
                     uploadStatus.style.color = '#dc2626';
-                    uploadStatus.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Ukuran file terlalu besar (max 20MB).';
+                    uploadStatus.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> File harus berupa gambar.';
+                    return;
+                }
+
+                // Validate file size (max 5MB for Telegraph)
+                if (file.size > 5 * 1024 * 1024) {
+                    uploadStatus.style.display = 'block';
+                    uploadStatus.style.color = '#dc2626';
+                    uploadStatus.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Ukuran foto terlalu besar (max 5MB).';
                     return;
                 }
 
@@ -525,28 +533,31 @@
 
                 try {
                     const formData = new FormData();
-                    formData.append('reqtype', 'fileupload');
-                    formData.append('fileToUpload', file);
+                    formData.append('file', file);
 
-                    const response = await fetch('https://catbox.moe/user/api.php', {
+                    const response = await fetch('https://telegra.ph/upload', {
                         method: 'POST',
                         body: formData
                     });
 
-                    const url = await response.text();
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
 
-                    if (url && url.startsWith('https://')) {
-                        uploadedPhotoUrl = url;
+                    const data = await response.json();
+
+                    if (data && data[0] && data[0].src) {
+                        uploadedPhotoUrl = 'https://telegra.ph' + data[0].src;
                         uploadStatus.style.color = '#16a34a';
                         uploadStatus.innerHTML = '<i class="fa-solid fa-check-circle"></i> Foto berhasil di-upload!';
                     } else {
-                        throw new Error('Upload failed');
+                        throw new Error('Invalid response format');
                     }
                 } catch (error) {
                     console.error('Upload error:', error);
-                    uploadStatus.style.color = '#dc2626';
-                    uploadStatus.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Gagal upload. Silakan coba lagi atau gunakan foto yang lebih kecil.';
-                    uploadedPhotoUrl = '';
+                    uploadStatus.style.color = '#f59e0b';
+                    uploadStatus.innerHTML = '<i class="fa-solid fa-info-circle"></i> Upload otomatis gagal. Anda tetap bisa melanjutkan, foto akan diminta untuk dilampirkan manual di email.';
+                    uploadedPhotoUrl = 'MANUAL_ATTACHMENT';
                 }
             };
 
@@ -558,9 +569,16 @@
 
                 const subject = `Testimoni Baru dari ${name}`;
                 let body = `Nama: ${name}%0D%0AAsal: ${origin}%0D%0APesan: ${text}`;
+                let alertMessage = 'Terima kasih! Email testimoni Anda telah disiapkan.';
 
-                if (uploadedPhotoUrl) {
+                if (uploadedPhotoUrl && uploadedPhotoUrl !== 'MANUAL_ATTACHMENT') {
+                    // Successful upload
                     body += `%0D%0A%0D%0AURL Foto: ${uploadedPhotoUrl}`;
+                    alertMessage = 'Terima kasih! Email testimoni Anda telah disiapkan dengan link foto yang sudah ter-upload.';
+                } else if (uploadedPhotoUrl === 'MANUAL_ATTACHMENT') {
+                    // Manual attachment needed
+                    body += `%0D%0A%0D%0A[PENTING: Mohon lampirkan foto yang tadi Anda pilih sebagai attachment di email ini]`;
+                    alertMessage = 'Email testimoni telah disiapkan. JANGAN LUPA untuk melampirkan foto yang tadi Anda pilih ke email yang akan terbuka!';
                 }
 
                 window.location.href = `mailto:patanjalaworx@gmail.com?subject=${subject}&body=${body}`;
@@ -570,7 +588,7 @@
                 uploadStatus.style.display = 'none';
                 uploadedPhotoUrl = '';
 
-                alert('Terima kasih! Email testimoni Anda telah disiapkan' + (uploadedPhotoUrl ? ' dengan link foto.' : '.'));
+                alert(alertMessage);
             };
         });
     </script>
