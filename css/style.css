@@ -590,8 +590,9 @@ button {
 }
 
 .timeline__title {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
 }
 
 .timeline__description {
@@ -1165,7 +1166,23 @@ button {
     }
 
     .timeline__container {
-        padding-left: 40px;
+        padding-left: 30px;
+        margin-top: 2rem;
+    }
+
+    .timeline__item {
+        margin-bottom: 2rem;
+    }
+
+    .timeline__title {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .timeline__item::before {
+        left: -27px;
+        width: 12px;
+        height: 12px;
     }
 
     .timeline__section-title {
