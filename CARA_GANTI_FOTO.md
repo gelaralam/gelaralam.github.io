@@ -5,22 +5,22 @@
 Berikut adalah daftar foto yang perlu diganti dan lokasinya:
 
 ### 1. **Logo** 
-- **Lokasi file**: `G:\web_GA\assets\logo.svg`
+- **Lokasi file**: `assets/logo.svg`
 - **Ukuran yang disarankan**: 500x500 pixel
 - **Format**: PNG atau SVG (dengan background transparan lebih bagus)
 
 ### 2. **Foto Abah (Ketua Adat)**
-- **Lokasi file**: `G:\web_GA\assets\abah.jpg`
+- **Lokasi file**: `assets/abah.jpg`
 - **Ukuran yang disarankan**: 800x1000 pixel (portrait/vertikal)
 - **Format**: JPG atau PNG
 
 ### 3. **Foto Rumah Adat**
-- **Lokasi file**: `G:\web_GA\assets\rumah-adat.jpg`
+- **Lokasi file**: `assets/rumah-adat.jpg`
 - **Ukuran yang disarankan**: 1200x800 pixel (landscape/horizontal)
 - **Format**: JPG atau PNG
 
 ### 4. **Foto Upacara Ngaseuk**
-- **Lokasi file**: `G:\web_GA\assets\ngaseuk.jpg`
+- **Lokasi file**: `assets/ngaseuk.jpg`
 - **Ukuran yang disarankan**: 1200x800 pixel (landscape/horizontal)
 - **Format**: JPG atau PNG
 
@@ -33,8 +33,8 @@ Berikut adalah daftar foto yang perlu diganti dan lokasinya:
 1. **Siapkan foto pengganti** dengan nama yang sama
 2. **Copy (salin)** foto baru Anda
 3. **Paste (tempel)** ke folder yang sesuai, contoh:
-   - Logo baru → paste ke `G:\web_GA\assets\` dengan nama `logo.svg` atau `logo.png`
-   - Foto Abah baru → paste ke `G:\web_GA\assets\` dengan nama `abah.jpg`
+   - Logo baru → paste ke `assets/` dengan nama `logo.svg` atau `logo.png`
+   - Foto Abah baru → paste ke `assets/` dengan nama `abah.jpg`
 4. **Pilih "Replace" (Ganti)** jika ditanya apakah ingin mengganti file yang sudah ada
 5. **Refresh browser** (tekan F5) untuk melihat perubahan
 
@@ -42,8 +42,8 @@ Berikut adalah daftar foto yang perlu diganti dan lokasinya:
 
 Jika foto Anda memiliki nama yang berbeda:
 
-1. **Taruh foto** di folder `G:\web_GA\assets\`
-2. **Buka file** `G:\web_GA\index.html` dengan Notepad atau text editor
+1. **Taruh foto** di folder `assets/`
+2. **Buka file** `index.html` dengan Notepad atau text editor
 3. **Cari dan ganti** nama file lama dengan nama file baru:
 
 **Untuk Logo:**
