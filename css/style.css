@@ -333,40 +333,36 @@ button {
     line-height: 1;
 }
 
-.sejarah__slider-container {
-    min-height: 350px;
+.sejarah__content {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
 }
 
-.sejarah__slide {
-    display: none;
+.sejarah__text {
     font-size: 1.1rem;
     line-height: 1.2;
     text-align: justify;
     color: var(--color-text-muted);
-    animation: fadeIn 0.5s ease;
 }
 
-.sejarah__slide.active {
-    display: block;
+/* Custom Scrollbar for Sejarah */
+.sejarah__content::-webkit-scrollbar {
+    width: 6px;
 }
 
-.sejarah__dots {
-    display: flex;
-    gap: 15px;
-    margin-top: 40px;
+.sejarah__content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
 }
 
-.sejarah__dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transition: 0.3s;
-}
-
-.sejarah__dot.active {
+.sejarah__content::-webkit-scrollbar-thumb {
     background: var(--color-accent);
-    transform: scale(1.4);
+    border-radius: 10px;
+}
+
+.sejarah__content::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.8);
 }
 
 /* ===================================
