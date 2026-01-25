@@ -59,6 +59,7 @@
                     <li><a href="#budaya" class="nav__link">Upacara Adat</a></li>
                     <li><a href="#jadwal" class="nav__link">Jadwal</a></li>
                     <li><a href="#galeri" class="nav__link">Galeri</a></li>
+                    <li><a href="#blog" class="nav__link">Blog</a></li>
                     <li><a href="#kontak" class="nav__link">Testimoni</a></li>
                 </ul>
             </div>
@@ -181,6 +182,23 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <h3 class="section__subtitle-alt">BERITA & KEGIATAN</h3>
+            <h2 class="section__title">BLOG</h2>
+            <div class="blog__grid" id="blog-grid">
+                <!-- Populated by JS -->
+            </div>
+            <div class="blog__action" style="text-align: center; margin-top: 2rem;">
+                <a href="https://www.instagram.com/kasepuhangelaralamofficial/" target="_blank" class="btn-primary"
+                    style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; padding: 12px 30px; border-radius: 30px; font-weight: 700; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 5px 15px rgba(220, 39, 67, 0.3); text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fa-brands fa-instagram"></i> IKUTI KAMI DI INSTAGRAM
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="kontak">
         <div class="container">
@@ -269,6 +287,7 @@
                     <li><a href="#budaya">Upacara Adat</a></li>
                     <li><a href="#jadwal">Jadwal Adat</a></li>
                     <li><a href="#galeri">Galeri</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#kontak">Testimoni</a></li>
                 </ul>
             </div>
@@ -353,6 +372,33 @@
                 "text": "Berkunjung ke  Kasepuhan Gelar Alam bikin dada sesak haru bercampur syukur. Di tengah dunia yang makin berisik dan serba pamer, warga Kasepuhan hidup begitu tenang, sederhana, tanpa banyak suara. Menjalani hidup penuh hormat pada alam, gotong royong, syukur yang tulus semuanya terasa murni, hangat, dan dalam. Rasanya seperti diingatkan pelan: kebahagiaan itu nggak perlu ribut, nggak perlu mewah. Cukup selaras dengan alam, saling jaga, dan bersyukur atas apa yang diberi. Hati langsung adem, rindu ingin ke sana, merasakan langsung kedamaian itu.",
                 "photo": "assets/testimonials/foto-Hananto.jpg",
                 "stars": 5
+            }
+        ];
+
+        const blogData = [
+            {
+                title: 'Perayaan Seren Taun 2025',
+                description: 'Upacara Seren Taun tahun ini berlangsung meriah dengan dihadiri oleh ribuan warga adat dari berbagai kasepuhan. Ritual syukuran atas hasil panen padi ini menjadi momen kebersamaan yang penuh makna.',
+                day: 15,
+                month: 'Desember',
+                year: 2025,
+                image: 'assets/gallery/gallery-2.jpg'
+            },
+            {
+                title: 'Kunjungan Mahasiswa dari Universitas Indonesia',
+                description: 'Rombongan mahasiswa Antropologi UI berkunjung untuk melakukan penelitian tentang kearifan lokal masyarakat adat Kasepuhan Gelaralam dalam menjaga kelestarian lingkungan.',
+                day: 10,
+                month: 'Januari',
+                year: 2026,
+                image: 'assets/gallery/gallery-3.JPG'
+            },
+            {
+                title: 'Persiapan Upacara Ngaseuk 2026',
+                description: 'Masyarakat adat mulai mempersiapkan lahan untuk upacara Ngaseuk yang akan dilaksanakan bulan depan. Tradisi menanam padi di ladang ini terus dilestarikan dari generasi ke generasi.',
+                day: 20,
+                month: 'Januari',
+                year: 2026,
+                image: 'assets/gallery/gallery-5.JPG'
             }
         ];
 
@@ -451,6 +497,33 @@
             });
 
             renderGallery();
+
+            // Blog
+            const blogGrid = document.getElementById('blog-grid');
+            const renderBlog = () => {
+                blogGrid.innerHTML = '';
+                blogData.forEach(item => {
+                    const card = document.createElement('article');
+                    card.className = 'blog__card';
+                    card.innerHTML = `
+                        <div class="blog__image">
+                            <img src="${item.image}" alt="${item.title}">
+                            <div class="blog__date">
+                                <span class="blog__day">${item.day}</span>
+                                <span class="blog__month">${item.month}</span>
+                                <span class="blog__year">${item.year}</span>
+                            </div>
+                        </div>
+                        <div class="blog__content">
+                            <h3 class="blog__title">${item.title}</h3>
+                            <p class="blog__description">${item.description}</p>
+                        </div>
+                    `;
+                    blogGrid.appendChild(card);
+                });
+            };
+
+            renderBlog();
 
             // Testimonials
             const testimonialGrid = document.getElementById('testimonials-grid');
