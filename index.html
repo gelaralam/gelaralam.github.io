@@ -234,6 +234,11 @@
                     <input type="text" id="p-origin" required placeholder="Kota Asal">
                 </div>
                 <div class="form-group">
+                    <label for="p-photo">Foto Anda (Opsional)</label>
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 5px;">*Pilih foto terbaik Anda</div>
+                    <input type="file" id="p-photo" accept="image/*">
+                </div>
+                <div class="form-group">
                     <label for="p-text">Cerita Anda</label>
                     <textarea id="p-text" rows="4" required
                         placeholder="Tuliskan pengalaman Anda di sini..."></textarea>
@@ -502,13 +507,26 @@
                 const origin = document.getElementById('p-origin').value;
                 const text = document.getElementById('p-text').value;
 
+                // Check photo
+                const photoInput = document.getElementById('p-photo');
+                const hasPhoto = photoInput && photoInput.files.length > 0; // Added null check for photoInput
+
                 const subject = `Testimoni Baru dari ${name}`;
-                const body = `Nama: ${name}%0D%0AAsal: ${origin}%0D%0APesan: ${text}`;
+                let body = `Nama: ${name}%0D%0AAsal: ${origin}%0D%0APesan: ${text}`;
+
+                if (hasPhoto) {
+                    body += `%0D%0A%0D%0A[PENTING: Mohon lampirkan/attach foto profil Anda di email ini]`;
+                }
 
                 window.location.href = `mailto:patanjalaworx@gmail.com?subject=${subject}&body=${body}`;
 
                 pModal.classList.remove('active');
-                alert('Terima kasih! Cerita Anda telah disiapkan di aplikasi email Anda.');
+
+                if (hasPhoto) {
+                    alert('Cerita Anda telah disiapkan. JANGAN LUPA untuk melampirkan (attach) foto yang tadi Anda pilih pada email yang terbuka!');
+                } else {
+                    alert('Terima kasih! Cerita Anda telah disiapkan di aplikasi email Anda.');
+                }
             };
         });
     </script>
