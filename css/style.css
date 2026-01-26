@@ -911,10 +911,11 @@ button {
 
 .subscribe-form button {
     background: #fff;
-    padding: 0 25px;
+    padding: 12px 25px;
     border-radius: 4px;
     font-weight: 600;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .subscribe-form button:hover {
@@ -1220,6 +1221,11 @@ button {
 
     .subscribe-form {
         flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__links {
+        gap: 18px;
     }
 }
 
