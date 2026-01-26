@@ -586,7 +586,6 @@ font {
     font-weight: normal !important;
     font-size: clamp(2rem, 5vw, 4rem);
     margin-bottom: 3rem;
-    margin-top: 3rem;
     line-height: 1;
 }
 
@@ -596,6 +595,8 @@ font {
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 0;
+    margin-top: 2rem;
+    display: block;
 }
 
 .timeline__container {
