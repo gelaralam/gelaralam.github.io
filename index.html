@@ -259,7 +259,7 @@
     <footer class="footer">
         <div class="container footer__container">
             <div class="footer__brand">
-                <img src="assets/logo.png" alt="Logo Kasepuhan" class="footer__logo">
+                <img src="assets/logo.png" alt="Logo Kasepuhan" class="footer__logo" loading="lazy" decoding="async">
             </div>
 
             <div class="footer__subscribe">
@@ -457,7 +457,7 @@
                 items.forEach(item => {
                     const div = document.createElement('div');
                     div.className = 'gallery__item';
-                    div.innerHTML = `<img src="${item.img}" alt="${item.title}"><div class="gallery__item-overlay"><h3>${item.title}</h3></div>`;
+                    div.innerHTML = `<img src="${item.img}" alt="${item.title}" loading="lazy" decoding="async"><div class="gallery__item-overlay"><h3>${item.title}</h3></div>`;
                     grid.appendChild(div);
                 });
             };
@@ -483,7 +483,7 @@
                     card.onclick = () => window.location.href = `blog-detail.html?id=${item.id}`;
                     card.innerHTML = `
                         <div class="blog__image">
-                            <img src="${item.image}" alt="${item.title}">
+                            <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
                             <div class="blog__date">
                                 <span class="blog__day">${item.day}</span>
                                 <span class="blog__month">${item.month}</span>
@@ -522,7 +522,7 @@
                         <div class="testimonial__stars">${starsHtml}</div>
                         <p class="testimonial__text">"${item.text}"</p>
                         <div class="testimonial__author">
-                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo">
+                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo" loading="lazy" decoding="async">
                             <div class="testimonial__details">
                                 <h4 class="testimonial__name">${item.name}</h4>
                                 <span class="testimonial__origin">${item.origin}</span>
