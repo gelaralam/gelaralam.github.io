@@ -586,6 +586,7 @@ font {
     font-weight: normal !important;
     font-size: clamp(2rem, 5vw, 4rem);
     margin-bottom: 3rem;
+    margin-top: 3rem;
     line-height: 1;
 }
 
