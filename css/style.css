@@ -579,8 +579,6 @@ font {
 .timeline__container-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .timeline__section-title {
@@ -589,7 +587,6 @@ font {
     font-size: clamp(2rem, 5vw, 4rem);
     margin-bottom: 3rem;
     line-height: 1;
-    color: #fff;
 }
 
 .timeline__section-subtitle {
@@ -625,7 +622,6 @@ font {
     font-size: 2.2rem;
     margin-bottom: 8px;
     line-height: 1.2;
-    color: #fff;
 }
 
 
