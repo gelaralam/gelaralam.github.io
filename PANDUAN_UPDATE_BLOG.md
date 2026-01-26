@@ -1,23 +1,30 @@
 # 📰 PANDUAN UPDATE BLOG
 
-Panduan ini menjelaskan cara mengelola konten Blog di website Kasepuhan Gelaralam.
+Panduan ini menjelaskan cara mengelola konten Blog di website Kasepuhan Gelaralam. Sekarang sistem blog sudah mendukung **Halaman Detil**, sehingga pengunjung bisa membaca berita lengkap dengan mengklik judul berita.
 
 ---
 
 ## 📍 Lokasi Data Blog
 
-Data blog tersimpan di file `index.html` pada bagian `blogData` (sekitar baris 377-403).
+Data blog sekarang tersimpan di file terpisah agar bisa diakses oleh halaman utama dan halaman detil:
+**`js/blog-data.js`**
 
 Contoh struktur data:
 ```javascript
 const blogData = [
     {
-        title: 'Judul Artikel Blog',
-        description: 'Deskripsi singkat artikel...',
+        id: 1,
+        title: 'Bantuan Modal Usaha dari Baznas Jabar',
+        category: 'EKONOMI',
+        description: 'Ringkasan singkat yang muncul di halaman depan...',
+        content: `
+            <p>Isi berita lengkap di sini...</p>
+            <p>Gunakan tag p untuk paragraf dan ul/li untuk daftar.</p>
+        `,
         day: 15,
-        month: 'Desember',
-        year: 2025,
-        image: 'assets/blog/nama-gambar.jpg'
+        month: 'Januari',
+        year: 2026,
+        image: 'assets/blog/blog-1.jpg'
     },
     // ... artikel lainnya
 ];
@@ -27,220 +34,87 @@ const blogData = [
 
 ## 📝 Struktur Data Blog
 
-Setiap artikel blog memiliki 6 bagian (properti):
+Setiap artikel blog memiliki properti berikut:
 
 | Properti | Penjelasan | Contoh |
 |----------|------------|--------|
+| `id` | ID Unik (Angka), harus beda setiap artikel | `1`, `2`, `3` |
 | `title` | Judul artikel | `'Perayaan Seren Taun 2025'` |
-| `description` | Deskripsi/ringkasan artikel | `'Upacara Seren Taun tahun ini...'` |
+| `category` | Kategori berita (opsional) | `'BUDAYA'`, `'EKONOMI'` |
+| `description` | Ringkasan singkat (tampil di kartu blog) | `'Upacara Seren Taun tahun ini...'` |
+| `content` | Isi berita lengkap (mendukung HTML) | `'<p>Isi lengkap...</p>'` |
 | `day` | Tanggal (angka 1-31) | `15` |
-| `month` | Bulan (teks bahasa Indonesia) | `'Desember'` |
-| `year` | Tahun (angka) | `2025` |
+| `month` | Bulan (teks bahasa Indonesia) | `'Januari'` |
+| `year` | Tahun (angka) | `2026` |
 | `image` | Path ke gambar | `'assets/blog/foto.jpg'` |
-
----
-
-## 📸 Menambahkan Foto Blog
-
-### Langkah 1: Siapkan Folder
-Buat folder `blog` di dalam folder `assets` jika belum ada:
-```
-gelaralam.github.io/
-└── assets/
-    └── blog/       ← Taruh foto blog di sini
-```
-
-### Langkah 2: Tambahkan Foto
-- Simpan foto dengan nama yang jelas (tanpa spasi), contoh: `seren-taun-2025.jpg`
-- Format yang didukung: `.jpg`, `.jpeg`, `.png`, `.webp`
-- Ukuran ideal: 800x500 pixel (rasio 16:10)
-
-### Langkah 3: Gunakan Path yang Benar
-```javascript
-image: 'assets/blog/seren-taun-2025.jpg'
-```
-
-> **Tips:** Anda juga bisa menggunakan foto dari folder `assets/gallery/` yang sudah ada.
 
 ---
 
 ## ✏️ Cara Mengedit Blog
 
-### Langkah 1: Buka File
-Buka file `index.html` menggunakan:
-- **Notepad** (klik kanan → Open with → Notepad)
-- **Visual Studio Code** (disarankan)
+### Langkah 1: Buka File Data
+Buka file **`js/blog-data.js`** menggunakan editor teks (Notepad atau VS Code).
 
-### Langkah 2: Cari Bagian `blogData`
-Tekan `Ctrl + F` (Find), lalu ketik: `blogData`
-
----
-
-## 🔄 Contoh-Contoh Perubahan
-
-### ➕ Menambah Artikel Blog Baru
-
-Tambahkan item baru di **awal array** agar artikel terbaru tampil pertama:
+### Langkah 2: Menambah Artikel Baru
+Tambahkan item baru di **paling atas** (setelah kurung siku buka `[`):
 
 ```javascript
-const blogData = [
-    // 👇 ARTIKEL BARU (taruh di paling atas)
-    {
-        title: 'Judul Artikel Baru',
-        description: 'Deskripsi artikel baru di sini. Tuliskan ringkasan singkat tentang isi artikel.',
-        day: 25,
-        month: 'Januari',
-        year: 2026,
-        image: 'assets/blog/foto-baru.jpg'
-    },
-    // Artikel lama di bawahnya...
-    {
-        title: 'Perayaan Seren Taun 2025',
-        ...
-    }
-];
+{
+    id: 4, // Pastikan ID ini belum dipakai
+    title: 'Judul Berita Baru',
+    category: 'BERITA',
+    description: 'Ringkasan yang akan muncul di halaman depan.',
+    content: `
+        <p>Tuliskan isi berita lengkap Anda di sini.</p>
+        <p>Anda bisa menambahkan beberapa paragraf.</p>
+    `,
+    day: 26,
+    month: 'Januari',
+    year: 2026,
+    image: 'assets/blog/foto-baru.jpg'
+},
 ```
 
 ⚠️ **PENTING:**
-- Pastikan ada **koma** (`,`) setelah setiap objek artikel, KECUALI artikel terakhir
-- Gunakan **kutip tunggal** (`'...'`) untuk teks
-- `day` dan `year` adalah **angka** (tanpa kutip)
+- Berikan **ID** baru yang lebih besar dari ID sebelumnya.
+- Pastikan ada **koma** (`,`) di akhir setiap blok `{ }`.
+- Gunakan **backtick** ( ``` ` ``` ) untuk properti `content` agar bisa menulis banyak baris.
 
 ---
 
-### ✏️ Mengubah Artikel yang Sudah Ada
-
-Cari artikel yang ingin diubah, lalu edit:
-
-**Contoh mengubah judul dan tanggal:**
-```javascript
-{
-    title: 'Judul Lama',        // ← Ganti ini
-    description: '...',
-    day: 10,                     // ← Ganti ini
-    month: 'Januari',
-    year: 2026,
-    image: 'assets/blog/foto.jpg'
-},
-```
-
-Menjadi:
-```javascript
-{
-    title: 'Judul Baru yang Diperbarui',
-    description: '...',
-    day: 28,
-    month: 'Januari',
-    year: 2026,
-    image: 'assets/blog/foto.jpg'
-},
-```
-
----
-
-### ❌ Menghapus Artikel
-
-Hapus seluruh objek artikel yang tidak diinginkan (termasuk kurung kurawal `{}`):
-
-**Sebelum:**
-```javascript
-const blogData = [
-    { title: 'Artikel A', ... },
-    { title: 'Artikel B (HAPUS)', ... },  // ← Hapus baris ini
-    { title: 'Artikel C', ... }
-];
-```
-
-**Sesudah:**
-```javascript
-const blogData = [
-    { title: 'Artikel A', ... },
-    { title: 'Artikel C', ... }
-];
-```
-
----
-
-## 📅 Daftar Nama Bulan
-
-Gunakan nama bulan berikut untuk properti `month`:
-
-| Bulan | Nama |
-|-------|------|
-| 1 | `'Januari'` |
-| 2 | `'Februari'` |
-| 3 | `'Maret'` |
-| 4 | `'April'` |
-| 5 | `'Mei'` |
-| 6 | `'Juni'` |
-| 7 | `'Juli'` |
-| 8 | `'Agustus'` |
-| 9 | `'September'` |
-| 10 | `'Oktober'` |
-| 11 | `'November'` |
-| 12 | `'Desember'` |
+## 📸 Panduan Gambar
+- Simpan foto di folder `assets/blog/`.
+- Ukuran ideal: 800x500 pixel.
+- Nama file jangan menggunakan spasi (gunakan tanda hubung `-`).
 
 ---
 
 ## 📋 Template Artikel Baru (Copy-Paste)
 
-Gunakan template ini untuk menambah artikel baru:
-
 ```javascript
 {
-    title: 'JUDUL ARTIKEL',
-    description: 'DESKRIPSI SINGKAT ARTIKEL',
-    day: TANGGAL,
-    month: 'NAMA_BULAN',
-    year: TAHUN,
+    id: 99,
+    title: 'JUDUL_BARU',
+    category: 'KATEGORI',
+    description: 'RINGKASAN_SINGKAT',
+    content: `
+        <p>PARAGRAF_1</p>
+        <p>PARAGRAF_2</p>
+    `,
+    day: 26,
+    month: 'Januari',
+    year: 2026,
     image: 'assets/blog/NAMA_FILE.jpg'
 },
 ```
 
-**Contoh terisi:**
-```javascript
-{
-    title: 'Kunjungan Delegasi Budaya dari Jepang',
-    description: 'Delegasi dari Prefektur Nara Jepang mengunjungi Kasepuhan Gelaralam untuk mempelajari kearifan lokal dalam pelestarian lingkungan dan pertanian tradisional.',
-    day: 5,
-    month: 'Februari',
-    year: 2026,
-    image: 'assets/blog/kunjungan-jepang.jpg'
-},
-```
-
----
-
-## ⚠️ Kesalahan yang Harus Dihindari
-
-| ❌ Salah | ✅ Benar |
-|----------|----------|
-| `title: Judul Tanpa Kutip` | `title: 'Judul Dengan Kutip'` |
-| `day: '15'` (pakai kutip) | `day: 15` (angka saja) |
-| `month: Januari` (tanpa kutip) | `month: 'Januari'` |
-| Lupa koma: `} {` | Ada koma: `}, {` |
-
 ---
 
 ## 💾 Simpan dan Test
-
-Setelah selesai mengedit:
-1. Tekan `Ctrl + S` untuk menyimpan
-2. Buka/refresh `index.html` di browser
-3. Scroll ke section **BLOG** untuk melihat perubahan
+1. Simpan file `js/blog-data.js`.
+2. Buka `index.html` di browser.
+3. Klik salah satu kartu blog untuk masuk ke halaman detil.
 
 ---
 
-## 🆘 Troubleshooting
-
-Jika blog tidak muncul setelah diedit:
-1. Buka browser, tekan `F12` untuk membuka Developer Tools
-2. Lihat tab **Console**
-3. Jika ada error merah, periksa:
-   - Apakah semua kutip sudah benar?
-   - Apakah ada koma yang hilang atau berlebih?
-   - Apakah path gambar benar?
-
----
-
-*Panduan dibuat: 25 Januari 2026*
+*Panduan diperbarui: 26 Januari 2026*

@@ -312,6 +312,7 @@
         </div>
     </footer>
 
+    <script src="js/blog-data.js"></script>
     <!-- SCRIPT UTAMA -->
     <script>
         // DATA
@@ -372,33 +373,6 @@
                 "text": "Berkunjung ke  Kasepuhan Gelar Alam bikin dada sesak haru bercampur syukur. Di tengah dunia yang makin berisik dan serba pamer, warga Kasepuhan hidup begitu tenang, sederhana, tanpa banyak suara. Menjalani hidup penuh hormat pada alam, gotong royong, syukur yang tulus semuanya terasa murni, hangat, dan dalam. Rasanya seperti diingatkan pelan: kebahagiaan itu nggak perlu ribut, nggak perlu mewah. Cukup selaras dengan alam, saling jaga, dan bersyukur atas apa yang diberi. Hati langsung adem, rindu ingin ke sana, merasakan langsung kedamaian itu.",
                 "photo": "assets/testimonials/foto-Hananto.jpg",
                 "stars": 5
-            }
-        ];
-
-        const blogData = [
-            {
-                title: 'Bantuan Modal Usaha dari Baznas Jabar',
-                description: '@baznasjabar memberikan bantuan modal usaha yang diberikan kepada Kasepuhan Gelaralam berupa Modal usaha Kopi Ciptagelar. "Zakat yang ditunaikan bukan hanya menjadi bantuan ekonomi, tetapi juga penguat semangat, penjaga kearifan, dan jalan menuju usaha mandiri." kutipan dari media sosial instagram baznasjabar. Terima kasih.',
-                day: 15,
-                month: 'Januari',
-                year: 2026,
-                image: 'assets/blog/blog-1.jpg'
-            },
-            {
-                title: 'Selamat Datang di Website resmi Kasepuhan Gelaralam',
-                description: 'Telah hadir website resmi Kasepuhan Gelaralam. Semoga bisa menjadi sarana informasi untuk semuanya.',
-                day: 23,
-                month: 'Januari',
-                year: 2026,
-                image: 'assets/blog/blog-2.jpg'
-            },
-            {
-                title: 'Warga Kasepuhan Gelaralam siap dengan produk barunya',
-                description: 'Kang Ade Pian Supriandi atau warga adat lebih mengenal beliau dengan sebutan A Dewan, sedang bersiap meluncurkan produk terbarunya dan bisa menjadi kebanggaan bagi warga adat di Kasepuhan Gelaralam, tunggu tanggal mainnya!.',
-                day: 21,
-                month: 'Desember',
-                year: 2025,
-                image: 'assets/blog/blog-3.jpg'
             }
         ];
 
@@ -505,6 +479,8 @@
                 blogData.forEach(item => {
                     const card = document.createElement('article');
                     card.className = 'blog__card';
+                    card.style.cursor = 'pointer';
+                    card.onclick = () => window.location.href = `blog-detail.html?id=${item.id}`;
                     card.innerHTML = `
                         <div class="blog__image">
                             <img src="${item.image}" alt="${item.title}">
@@ -515,8 +491,12 @@
                             </div>
                         </div>
                         <div class="blog__content">
+                            <span style="color: var(--color-accent); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 10px; display: block;">${item.category || 'BERITA'}</span>
                             <h3 class="blog__title">${item.title}</h3>
                             <p class="blog__description">${item.description}</p>
+                            <span class="read-more" style="color: var(--color-primary); font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-top: 15px;">
+                                Baca Selengkapnya <i class="fa-solid fa-arrow-right"></i>
+                            </span>
                         </div>
                     `;
                     blogGrid.appendChild(card);
