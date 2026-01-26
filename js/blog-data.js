@@ -88,4 +88,21 @@ const blogData = [
         image: 'assets/blog/angklung.jpg',
         category: 'STORY'
     },
+    {
+        id: 6,
+        title: 'PANTUN SUNDA',
+        description: 'Berbeda dengan Seni Pantun Melayu, Seni Pantun Sunda berisi mengenai cerita kesejarahan yang dilagamkan dalam bentuk tutur kata dengan iringan Kecapi dan penyediaan Sajen pada sekelilingnya...',
+        content: `
+        <p>Berbeda dengan Seni Pantun Melayu, Seni Pantun Sunda berisi mengenai cerita kesejarahan yang dilagamkan dalam bentuk tutur kata dengan iringan Kecapi dan penyediaan Sajen pada sekelilingnya, Seni Pantun Sunda telah tercatat dalam Naskah Kuna Sanghiyang Siksa Kandang Karesian (Kropak 630) sebagaimana; “Jika ingin mengetahui isi Pantun Anggalarang, Banyakcatra, Siliwangi, Haturwangi, tanyalah Juru Pantun,” Sanghiyang Siksa Kandang Karesian (Kropak 630),</p>
+    <p>Pada Saat ini Pantun Sunda sudah jarang dipentaskan, “Proses menjadi seorang Juru Pantun tidak semudah yang dibayangkan. tidak ada audisi atau sekolah karena proses untuk menjadi Juru Pantun adalah ketika seseorang menerima Wangsit atau Pituduh dari Karuhun.” Tutur Ki Arsan (50 tahun) yang merupakan Juru Pantun dari Kasepuhan Ciptagelar, Banten Kidul.</p>
+    <p>Menurut Penuturan Ki Arsan, seorang Juru Pantun adalah orang yang dipilih oleh Karuhun untuk bercerita dalam Acara-acara Khusus seperti Ritual Adat Ngaseuk, Ritual Adat Mipit, dan Ruwatan. “Aki belum pernah baca buku sejarah. Tidak pernah membaca Koran dan Berita tapi ketika Aki sudah bersila dihadapan Kacapi, Aki bisa bercerita,” tutur Aki Arsan yang menjelaskan bahwa ketika ia telah bersila dan memejamkan mata, maka bukan dirinya yang berbicara melainkan Karuhun anu Nyurup. “Buku Aki mah ngan dua, nu hiji Menyan, anu Hiji deui Panglay,” Ia menjelaskan bahwa buku yang selalu ia gunakan adalah dua, satu Kemenyan, dua Bangle.</p>
+    <p>Dalam Pantun Bogor versi Aki Buyut Baju Rambeng (1515 M) diceritakan bahwa Pantun dibagi menjadi dua bagian, yang pertama adalah Pantun Gede, yang kedua adalah Pantun Leutik. Pantun Gede adalah Pantun yang berisi mengenai Ajaran Dharma Sunda Pajajaran, Perhitungan Sunda jaman Pajajaran, Taktik Perang masa Kerajaan Pajajaran dan Ramalan, sedangkan Pantun Leutik adalah Pantun yang berisi mengenai Kisah Ksatria Sunda jaman Pajajaran, Asal-usul nama tempat, dan kisah Cinta. Termasuk ramalan Wangsit Siliwangi yang kita kenal adalah sepotong dari  cerita Pantun bogor dalam lalakon Pajajaran Seren Papan yang menceritakan mengenai runtuhnya Kerajaan Pajajaran dibawah kepemimpinan Ragamulya (1567-1579).</p>
+    <p>Berbeda dengan Pantun di daerah Banten atau pun Priangan lainnya dimana pementasan Pantun adalah Tradisi Lisan tanpa rujukan, Pantun Bogor telah dijadikan Buku karena merujuk pada amanat pewaris Pantun yaitu Rakean Minda Kalangan (1969-1971) bahwa Pantun Bogor harus menjadi pengingat di masa yang akan datang dan sebagai media untuk menyambut orang yang tertinggal dan ingin mencari lagi cerita yang sudah Dihaneuleumkeun atau disembunyikan. Hingga kini beberapa orang telah menjadi Pewaris Pantun Bogor diantaranya, Rd, Muchtar Kala (1969-1971), Anis Djatisunda (1993). (TAMA)</p>
+    `,
+        day: 5,
+        month: 'Agustus',
+        year: 2025,
+        image: 'assets/blog/kiarsan.jpg',
+        category: 'STORY'
+    },
 ];
