@@ -160,6 +160,98 @@
             color: #fff;
         }
 
+        .latest-posts {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid #eee;
+        }
+
+        .latest-posts__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .latest-posts__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .latest-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .latest-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .latest-card__image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .latest-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .latest-card:hover .latest-card__image img {
+            transform: scale(1.1);
+        }
+
+        .latest-card__content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .latest-card__category {
+            font-size: 0.7rem;
+            color: var(--color-accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .latest-card__title {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .latest-card__date {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media (max-width: 900px) {
+            .latest-posts__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .blog-detail__title {
                 font-size: 2rem;
@@ -167,6 +259,10 @@
 
             .blog-detail__image {
                 height: 300px;
+            }
+
+            .latest-posts__grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -301,6 +397,14 @@
                         ${post.content || post.description}
                     </div>
 
+                    <!-- Latest Posts Section -->
+                    <div class="latest-posts">
+                        <h2 class="latest-posts__title">Berita Terkait Lainnya</h2>
+                        <div class="latest-posts__grid" id="latest-posts-grid">
+                            <!-- Items populated by JS -->
+                        </div>
+                    </div>
+
                     <div class="blog-detail__footer">
                         <a href="index.html#blog" class="back-to-blog">
                             <i class="fa-solid fa-arrow-left"></i> Kembali ke Blog
@@ -318,6 +422,27 @@
                         </div>
                     </div>
                 `;
+
+                // Render Latest Posts
+                const latestGrid = document.getElementById('latest-posts-grid');
+                const otherPosts = blogData.filter(p => p.id !== postId).slice(0, 3);
+
+                otherPosts.forEach(p => {
+                    const card = document.createElement('a');
+                    card.href = `blog-detail.html?id=${p.id}`;
+                    card.className = 'latest-card';
+                    card.innerHTML = `
+                        <div class="latest-card__image">
+                            <img src="${p.image}" alt="${p.title}">
+                        </div>
+                        <div class="latest-card__content">
+                            <span class="latest-card__category">${p.category || 'BERITA'}</span>
+                            <h3 class="latest-card__title">${p.title}</h3>
+                            <div class="latest-card__date">${p.day} ${p.month} ${p.year}</div>
+                        </div>
+                    `;
+                    latestGrid.appendChild(card);
+                });
             } else {
                 container.innerHTML = `
                     <div style="text-align: center; padding: 100px 0;">
