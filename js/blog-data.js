@@ -52,5 +52,24 @@ const blogData = [
         year: 2025,
         image: 'assets/blog/blog-3.jpg',
         category: 'KREATIVITAS'
+    },
+    {
+        id: 4
+        title: 'Di Kampung Ini Padi Adalah Nadi',
+        description: 'Nendra (10 tahun) tampak semangat ketika membantu kakeknya yang sedang mengunjal Padi dari sawah milik kakeknya menuju Leuit atau Lumbung Padi khas Kasepuhan Gelaralam.',
+        content: `
+            <p>Nendra (10 tahun) tampak semangat ketika membantu kakeknya yang sedang mengunjal Padi dari sawah milik kakeknya menuju Leuit atau Lumbung Padi khas Kasepuhan Gelaralam.Begitu juga dengan teman sebayanya yang sudah terbiasa memikul pocongan Padi untuk dibawa ke Leuit, sebelum akhirnya dirapihkan di dalam Leuit.</p>
+            <p>Berbeda dengan anak seusianya di Kota yang telah terkontaminasi gadged atau game online lainnya, Nendra dan kawan-kawannya lebih senang bermain dengan pikulan padi. Menurut penuturan Aki Koyod (47 tahun) yang menjabat sebagai Rorokan Pare Kasepuhan Gelaralam, anak kecil di sini sudah diajarkan untuk mengenal padi sebelum pada akhirnya mereka Sakuren atau Menikah. “Memperkenalkan padi kepada anak-anak kecil di sini sudah menjadi kewajiban Masyarakat Adat Gelaralam, karena dalam pandangan Aki, Padi adalah salahsatu bahan yang harus dikenali sejak dini,” ungkap Aki Koyod.</p>
+            <p>Menurut penuturan Aki Koyod (47 tahun) yang menjabat sebagai Rorokan Pare Kasepuhan Gelaralam, anak kecil di sini sudah diajarkan untuk mengenal padi sebelum pada akhirnya mereka Sakuren atau Menikah. “Memperkenalkan padi kepada anak-anak kecil di sini sudah menjadi kewajiban Masyarakat Adat Gelaralam, karena dalam pandangan Aki, Padi adalah salahsatu bahan yang harus dikenali sejak dini,” ungkap Aki Koyod.</p>
+            <p>Padi bukan hanya sebagai bahan pokok semata, dalam pandangan Tradisi Masyarakat Gelaralam, padi merupakan Makhluk yang sama seperti manusia. Tak ayal proses penanaman padi di Kasepuhan Gelaralam seperti hal nya kita mengurusi Manusia dari mulai kecil, dewasa hingga akhirnya menikah dan beranak. “Rurukan berarti merawat, berasal dari kata Ruruk yang artinya memomong,” Aki Koyod.</p>
+            <p>Tradisi menanam Padi satu tahun sekali masih mereka pertahankan hingga saat ini, terhitung 160 variates padi masih mereka pertahankan sejak 1368 hingga saat ini. Dalam proses padi menjadi beras, mereka masih menggunakan Tradisi lama, dari mulai Ngaseuk atau menanam padi Huma Ladang yang memakai metode tongkat untuk melubangi tanah, hingga memakai Ani-ani sebagai alat untuk memotong padi dari tangkai nya ketika masa panen telah tiba. Tradisi ini merupakan warisan yang wajib dijaga oleh Masyarakat Gelaralam, karena sesuai dengan amanat Leluhur mereka jika “Kudu bisa ngigelan jeung ngigelkeun jaman, tapi ulah kababawa ku jaman,” yang berarti Kita harus bisa beradaptasi akan perkembangan jaman, tapi jangan sesekali tergerus oleh jaman.</p>
+            <p>Tidak seperti di Kanekes Baduy dimana anak kecil disana tidak diwajibkan untuk sekolah, Masyarakat Gelaralam membuka dirinya dengan hal berbau Teknologi, digital, dan Pendidikan. Mereka biasa bersekolah hingga Sekolah Menengah Atas untuk selanjutnya mereka dapat meilih antara bekerja di Kota atau kembali menjadi seorang Petani dan penggarap Kebun. Dapat disimpulkan jika Masyarakat Kasepuhan dapat hidup dalam keseimbangan menjaga Tradisi dan juga tidak menutup akan perkambangan jaman yang bersifat masivve. (TAMA)</p>
+            
+        `,
+        day: 23,
+        month: 'Juli',
+        year: 2025,
+        image: 'assets/blog/kampung-padi.jpg',
+        category: 'STORY'
     }
 ];
