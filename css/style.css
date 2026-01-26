@@ -165,6 +165,61 @@ button {
     border-radius: 2px;
 }
 
+/* Language Switcher */
+.nav__lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+    color: var(--color-accent);
+}
+
+.lang-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Hide Google Translate Banner */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+body {
+    top: 0 !important;
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Override Google Translate Font Styles */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    box-sizing: border-box;
+}
+
 /* ===================================
    Hero Section
    =================================== */
