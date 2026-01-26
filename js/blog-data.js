@@ -54,7 +54,7 @@ const blogData = [
         category: 'KREATIVITAS'
     },
     {
-        id: 4
+        id: 4,
         title: 'Di Kampung Ini Padi Adalah Nadi',
         description: 'Nendra (10 tahun) tampak semangat ketika membantu kakeknya yang sedang mengunjal Padi dari sawah milik kakeknya menuju Leuit atau Lumbung Padi khas Kasepuhan Gelaralam.',
         content: `
