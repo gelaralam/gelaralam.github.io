@@ -333,69 +333,12 @@
     </footer>
 
     <script src="js/blog-data.js"></script>
+    <script src="js/budaya-data.js"></script>
+    <script src="js/timeline-data.js"></script>
+    <script src="js/gallery-data.js"></script>
+    <script src="js/testimonial-data.js"></script>
     <!-- SCRIPT UTAMA -->
     <script>
-        // DATA
-        const budayaData = [
-            { title: 'NGASEUK', b: 'assets/budaya-bg.png', d: 'Upacara adat ngaseuk merupakan kegiatan menanam padi di ladang (huma). Seluruh masyarakat Kasepuhan Gelaralam yang sudah menikah (rarabi) diwajibkan untuk menanam padi di ladang. Adapun yang belum menikah hanya sekadar membantu orang tua atau keluarganya yang akan menjalankan kegiatan ngaseuk. Menurut Aki Koyod, hal ini dilaksanakan karena harus adanya kerja sama antara laki-laki dan perempuan dalam pelaksanaan ngaseuk. Oleh karena itu, apabila yang menikah tersebut kehilangan salah satunya (meninggal) atau bercerai (papirak), maka tidak bisa lagi melaksanakan upacara adat ngaseuk.' },
-            { title: 'MIPIT', b: 'assets/mipit-bg.jpg', d: 'Upacara adat mipit merupakan kegiatan memetik atau memanen padi. Dilakukan di ladang (huma) juga di sawah, namun yang utama dilakukan di ladang.' },
-            { title: 'NGANYARAN', b: 'assets/tradisi-3.png', d: 'Nganyaran merupakan kegiatan yang dilakukan untuk menanak nasi dari beras pertama yang dipanen di tahun baru. Sebelum nganyaran, biasanya seminggu sebelumnya diadakan nutu nganyaran (menumbuk padi pertama). Nutu nganyaran dimulai oleh Ema, kemudian diteruskan oleh incu putu (warga adat) dari berbagai daerah.' },
-            { title: 'NGADIUKEUN', b: 'assets/tradisi-4.png', d: 'Ngadiukeun merupakan kegiatan ritual yang dilaksanakan di Leuit (lumbung padi). Setelah padi dari ladang (huma) maupun sawah diangkut (diunjal), dilaksanakan ritual ngadiukeun padi, yaitu mendudukkan (menempatkan secara resmi) padi di dalam lumbung.' },
-            { title: 'SERENTAUN', b: 'assets/tradisi-5.png', d: 'Serentaun sering disebut juga séréntaun. Serentaun memiliki arti menyerahkan hasil bumi kepada Yang Maha Memiliki (Tuhan). Dilaksanakan melalui beberapa (rangkaian) syukuran, kirim doa, serta selamatan.' }
-        ];
-
-        const timelineData = [
-            { id: 1, date: '1 PEBRUARI', title: 'PANGANGGOAN 14 NA RUAH', description: 'Opat belasna merupakan kegiatan yang dilakukan sebulan sekali.' },
-            { id: 2, date: '4 PEBRUARI', title: 'SIDKAH RUAH REBO 16 RUAH', description: 'Upacara adat yang berkaitan dengan aspek keagamaan' },
-            { id: 3, date: '11 PEBRUARI', title: 'TUTUP NYAMBUT 23 RUAH', description: 'Tutup nyambut dilaksanakan untuk menjadi tanda atau sandi kasepuhan.' },
-            { id: 4, date: '24 PEBRUARI', title: 'PAMAGERAN SALASA 7 PUASA', description: 'Pamageran dilaksanakan untuk memagari seluruh kegiatan pertanian.' },
-            { id: 5, date: '2 MARET', title: 'PANGANGGOAN 14 NA PUASA', description: 'Opat belasna merupakan kegiatan yang dilakukan sebulan sekali.' },
-            { id: 6, date: '5 MARET', title: 'PANYIRAMAN KEMIS 16 PUASA', description: 'Panyiraman atau Salamet Mapag Paré Nyiram dilakukan ketika padi sudah mulai tumbuh bulir atau nyiram (Paré Beukah) baik di huma dan disawah, dilaksanakan selametan atau syukuran agar padi tumbuh dengan baik dan terhidar dari hama.' },
-            { id: 7, date: '23 MARET', title: 'PANYIMURAN SENEN 4 SAWAL', description: 'Kegiatan nyimur dilakukan untuk inisiasi bayi baru lahir.' },
-            { id: 8, date: '31 MARET', title: 'BEBERES PANYIMURAN SALASA 12 SAWAL', description: 'Kegiatan nyimur dilakukan untuk inisiasi bayi baru lahir.' },
-            { id: 9, date: '1 APRIL', title: 'PANGANGGOAN 14 NA SAWAL', description: 'Panganggoan Hajat keinginan Abah hendak mengkhitanan (sunatan)' }
-        ];
-
-        const galleryItems = [
-            { cat: 'life', title: 'Masyarakat Adat', img: 'assets/gallery/gallery-1.jpg' },
-            { cat: 'adat', title: 'Tradisi Ngunjal Padi', img: 'assets/gallery/gallery-2.jpg' },
-            { cat: 'life', title: 'Kebersamaan Warga', img: 'assets/gallery/gallery-3.JPG' },
-            { cat: 'life', title: 'Kampung Gelaralam', img: 'assets/gallery/gallery-4.PNG' },
-            { cat: 'adat', title: 'Ritual Nganyaran', img: 'assets/gallery/gallery-5.JPG' },
-            { cat: 'life', title: 'Dokumentasi Budaya', img: 'assets/gallery/gallery-6.JPG' }
-        ];
-
-        const testimonialData = [
-            {
-                "name": "Fahril Veraldyka",
-                "origin": "Bandung",
-                "text": "Salah satu pengalaman paling unik yang pernah saya dapatkan! Dapat melihat keseharian warga adat dan kelestarian budaya yang tetap terjaga. Tidak lupa terimakasih untuk seluruh pihak yang telah membantu merealisasikan kunjungan saat itu!",
-                "photo": "assets/testimonials/foto-Fahril.jpg",
-                "stars": 5
-            },
-            {
-                "name": "Ameesy",
-                "origin": "Bandung",
-                "text": "You’ll have a really FUN experience here! You can also learn about Sundanese culture, traditions, and everyday life. If you’re a total nature lover into mountains, cool air, and beautiful views this place is perfect for you. Trust me, once you’re there, you won’t want to go home!.",
-                "photo": "assets/testimonials/foto-Ameesy.jpg",
-                "stars": 5
-            },
-            {
-                "name": "Kiki Santi N",
-                "origin": "Bandung",
-                "text": "Kalau dr bandung sebenernya destinasi yg sangat lengkap pantai lewat,offroad oke, hutan ada ..dan tiba2 kayak Nemu surga tersembunyi ditengah hutan....respect dijaman skrg masih ada yg sangat memelihara adat Sunda, kayak kembali ke jaman sebelum dunia JD kacao hehhehe....",
-                "photo": "assets/testimonials/foto-Kiki.jpg",
-                "stars": 5
-            },
-            {
-                "name": "Hananto WB",
-                "origin": "Temanggung",
-                "text": "Berkunjung ke  Kasepuhan Gelar Alam bikin dada sesak haru bercampur syukur. Di tengah dunia yang makin berisik dan serba pamer, warga Kasepuhan hidup begitu tenang, sederhana, tanpa banyak suara. Menjalani hidup penuh hormat pada alam, gotong royong, syukur yang tulus semuanya terasa murni, hangat, dan dalam. Rasanya seperti diingatkan pelan: kebahagiaan itu nggak perlu ribut, nggak perlu mewah. Cukup selaras dengan alam, saling jaga, dan bersyukur atas apa yang diberi. Hati langsung adem, rindu ingin ke sana, merasakan langsung kedamaian itu.",
-                "photo": "assets/testimonials/foto-Hananto.jpg",
-                "stars": 5
-            }
-        ];
-
         // LOGIC
         document.addEventListener('DOMContentLoaded', () => {
             // Navbar
