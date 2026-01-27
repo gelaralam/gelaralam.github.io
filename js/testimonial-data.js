@@ -26,12 +26,5 @@ const testimonialData = [
         "text": "Berkunjung ke Kasepuhan Gelar Alam bikin dada sesak...",
         "photo": "assets/testimonials/foto-Hananto.jpg",
         "stars": 5
-    },
-    {
-        "name": "Rolly A",
-        "origin": "Bandung",
-        "text": "Aduh saya pengen banget ke Kasepuhan Gelaralam, tapi selalu gak ada waktu. Saya lihat di youtube berasa nya indah banget...Doakan saya semoga datang kesini...amiiin!",
-        "photo": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/73aac769-2e46-4fcb-91bb-ec915c4f739e.PNG",
-        "stars": 5
     }
 ];
