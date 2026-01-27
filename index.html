@@ -559,7 +559,11 @@
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Maaf, terjadi kesalahan saat mengirim cerita. Silakan coba lagi nanti.');
+                    let errorMessage = 'Maaf, terjadi kesalahan saat mengirim cerita.';
+                    if (error.message) {
+                        errorMessage += '\nDetail: ' + error.message;
+                    }
+                    alert(errorMessage + '\n\nSilakan cek koneksi internet Anda atau hubungi admin jika masalah berlanjut.');
                 } finally {
                     submitBtn.disabled = false;
                     submitBtn.innerText = originalBtnText;
