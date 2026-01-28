@@ -8,6 +8,7 @@ const blogData = [
         "month": "Januari",
         "year": 2026,
         "image": "assets/blog/blog-2.jpg",
+        "video_url": "",
         "category": "PENGUMUMAN"
     },
     {
@@ -19,6 +20,7 @@ const blogData = [
         "month": "Juli",
         "year": 2025,
         "image": "assets/blog/angklung.jpg",
+        "video_url": "",
         "category": "STORY"
     },
     {
@@ -30,6 +32,7 @@ const blogData = [
         "month": "Januari",
         "year": 2026,
         "image": "assets/blog/blog-1.jpg",
+        "video_url": "",
         "category": "EKONOMI"
     },
     {
@@ -41,6 +44,7 @@ const blogData = [
         "month": "Agustus",
         "year": 2025,
         "image": "assets/blog/kiarsan.jpg",
+        "video_url": "",
         "category": "STORY"
     },
     {
@@ -52,6 +56,7 @@ const blogData = [
         "month": "Desember",
         "year": 2025,
         "image": "assets/blog/blog-3.jpg",
+        "video_url": "",
         "category": "KREATIVITAS"
     },
     {
@@ -63,6 +68,7 @@ const blogData = [
         "month": "Juli",
         "year": 2025,
         "image": "assets/blog/kampung-padi.jpg",
+        "video_url": "",
         "category": "STORY"
     },
     {
@@ -74,6 +80,7 @@ const blogData = [
         "month": "Januari",
         "year": 2026,
         "image": "",
+        "video_url": "https://youtube.com/shorts/HDrBT2Paf0U?si=OnsVQK5EheH6-3LD",
         "category": "PERTANIAN"
     }
 ];
