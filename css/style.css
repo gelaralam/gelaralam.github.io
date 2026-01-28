@@ -893,22 +893,49 @@ font {
 }
 
 .blog__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 30px;
     margin-top: 3rem;
+    padding-bottom: 30px;
+    /* Space for scrollbar and shadow */
+    padding-left: 20px;
+    padding-right: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) rgba(0, 0, 0, 0.05);
+}
+
+.blog__grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.blog__grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.blog__grid::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 10px;
 }
 
 .blog__card {
+    flex: 0 0 350px;
+    /* Fixed width for horizontal scrolling */
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    scroll-snap-align: start;
 }
 
 .blog__card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    /* Reduced lift to avoid clipping issues */
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
 }
 
