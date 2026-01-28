@@ -80,15 +80,69 @@ button {
 }
 
 /* ===================================
-   Pre-Footer Extension
+   Pre-Footer Extension (Supported By)
    =================================== */
 .pre-footer-section {
-    height: 160px;
-    background-color: var(--color-bg-light);
+    position: relative;
+    padding: 50px 0;
+    min-height: 160px;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 2px solid #f0f0f0;
+    margin-top: 40px;
+}
+
+.supported-by__badge {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f7a600;
+    /* Vibrant yellow/orange from image */
+    color: #fff;
+    padding: 8px 25px;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pre-footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.partners__logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.partner__logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partner__logo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .partners__logos {
+        gap: 30px;
+    }
+
+    .partner__logo {
+        height: 40px;
+    }
 }
 
 /* ===================================
