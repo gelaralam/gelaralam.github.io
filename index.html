@@ -447,7 +447,7 @@
                     card.onclick = () => window.location.href = `blog-detail.html?id=${item.id}`;
                     card.innerHTML = `
                         <div class="blog__image">
-                            <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
+                            <img src="${item.image || 'assets/logo.png'}" alt="${item.title}" loading="lazy" decoding="async" onerror="this.src='assets/logo.png'">
                             <div class="blog__date">
                                 <span class="blog__day">${item.day}</span>
                                 <span class="blog__month">${item.month}</span>

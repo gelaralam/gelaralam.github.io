@@ -390,6 +390,8 @@
                 videoId = url.split('youtu.be/')[1].split('?')[0];
             } else if (url.includes('embed/')) {
                 videoId = url.split('embed/')[1].split('?')[0];
+            } else if (url.includes('/shorts/')) {
+                videoId = url.split('/shorts/')[1].split('?')[0];
             }
             return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
         }
@@ -422,9 +424,11 @@
                         </div>
                     </div>
 
+                    ${post.image ? `
                     <div class="blog-detail__image">
-                        <img src="${post.image}" alt="${post.title}">
+                        <img src="${post.image}" alt="${post.title}" onerror="this.src='assets/logo.png'">
                     </div>
+                    ` : ''}
 
                     ${post.video_url ? `
                         <div class="blog-detail__video" style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 100%; aspect-ratio: 16/9;">
