@@ -1,60 +1,38 @@
-# PANDUAN MENGELOLA TESTIMONI
+# 💬 PANDUAN MENGELOLA TESTIMONI
 
-Berikut adalah langkah-langkah untuk menampilkan testimoni baru ke website setelah Anda menerima email dari pengirim.
+Sekarang Anda dapat mengelola testimoni pengunjung secara langsung melalui Dashboard Admin. Sistem akan otomatis mensinkronkan data ke website.
 
-## METODE 1: Menggunakan Halaman Admin (Disarankan)
+## 🚀 Cara Mengelola Testimoni
 
-Saya telah membuatkan halaman khusus untuk mempermudah Anda menyusun kode testimoni tanpa harus mengetik manual simbol-simbol koding.
+1.  **Buka Dashboard Admin**
+    *   Buka file `admin.html` di browser Anda.
+    *   Pastikan Anda sudah login (jika diperlukan).
+    *   Klik menu **"Testimoni"** di sidebar kiri.
 
-1.  **Buka Halaman Admin**
-    *   Buka file `admin.html` di browser Anda (klik ganda file tersebut di folder komputer Anda).
+2.  **Meninjau Testimoni Masuk (Pending)**
+    *   Testimoni yang dikirim pengunjung melalui website akan muncul dengan status **"PENDING"**.
+    *   Gunakan tombol **Mata/Check** di kolom Aksi untuk **menampilkan** (Approve) atau **menyembunyikan** testimoni tersebut dari website.
+    *   Testimoni yang disetujui akan berubah status menjadi **"AKTIF"**.
 
-2.  **Tambah Data Baru**
+3.  **Menambah Testimoni Manual**
     *   Klik tombol **"+ Tambah Testimoni"**.
-    *   Isi formulir berdasarkan data yang Anda terima di email:
-        *   **Nama Lengkap**: Salin dari email.
-        *   **Asal Kota**: Salin dari email.
-        *   **URL Foto**: 
-            *   Foto akan dikirim sebagai **attachment email** (bukan URL).
-            *   **Download** attachment dari email ke folder `assets/testimonials/`.
-            *   Rename file jika perlu (misal: `budi-jakarta.jpg`).
-            *   Tulis path di kolom ini: `assets/testimonials/budi-jakarta.jpg`.
-        *   **Rating**: Berikan bintang sesuai penilaian.
-        *   **Komentar**: Salin pesan cerita dari email.
-    *   Klik **Simpan**.
+    *   Isi data Pengunjung (Nama, Asal, Foto, Rating, dan Komentar).
+    *   Klik **Simpan**. Testimoni ini akan langsung berstatus **AKTIF**.
 
-3.  **Generate Kode**
-    *   Setelah data masuk ke tabel, gulir ke bawah ke bagian "Export Data".
-    *   Klik tombol **"Generate Code"**.
-    *   Kode program akan muncul. Klik **"Copy to Clipboard"**.
+4.  **Mengedit atau Menghapus**
+    *   Gunakan ikon **Pensil** untuk mengedit isi testimoni.
+    *   Gunakan ikon **Tempat Sampah** untuk menghapus testimoni secara permanen.
 
-4.  **Update Website (`index.html`)**
-    *   Buka file `index.html` menggunakan Text Editor (seperti Notepad, VS Code, dll).
-    *   Cari bagian kode: `const testimonialData = [ ... ];` (biasanya ada di bagian bawah, dekat `<script>`).
-    *   **Hapus** seluruh blok `const testimonialData = [...];` yang lama.
-    *   **Tempel (Paste)** kode yang baru saja Anda copy dari Halaman Admin.
-    *   **Simpan (Save)** file `index.html`.
-
-5.  Testimoni baru sudah tampil di website!
+## 🔄 Sinkronisasi Otomatis
+Setiap kali Anda menekan tombol **Simpan**, **Approve**, atau **Hapus**, sistem akan mengirimkan data ke server. Server kemudian akan otomatis memperbarui file di GitHub agar perubahan tampil di website `gelaralam.id`. 
+> [!NOTE]
+> Perubahan biasanya membutuhkan waktu sekitar 1-2 menit untuk muncul di website publik karena proses sinkronisasi GitHub.
 
 ---
 
-## METODE 2: Edit Manual (Cara Cepat)
-
-Jika Anda terbiasa dengan kode, Anda bisa langsung mengedit `index.html`:
-
-1.  Buka `index.html`.
-2.  Cari `const testimonialData`.
-3.  Tambahkan data baru di dalam kurung siku `[...]`, formatnya seperti ini:
-
-```javascript
-    {
-        name: "Nama Pengirim",
-        origin: "Asal Kota",
-        text: "Isi testimoni dari email...",
-        photo: "assets/nama-file-foto.jpg", // Pastikan foto sudah ditaruh di folder assets
-        stars: 5
-    },
-```
-
-4.  Simpan file.
+## 🛠️ Cadangan (Backup Manual)
+Jika sinkronisasi otomatis mengalami gangguan, Anda tetap bisa memperbarui secara manual:
+1.  Scroll ke bawah di halaman Admin ke bagian **"Backup Data"**.
+2.  Klik tombol **"Testimoni"**.
+3.  Salin kode yang muncul.
+4.  Buka file `js/testimonial-data.js` dan ganti isinya dengan kode yang baru saja disalin.
