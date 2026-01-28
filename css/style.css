@@ -132,8 +132,8 @@ button {
 }
 
 .partner__logo--small {
-    height: 40px;
-    /* Reducing Kabaya Putri logo size */
+    height: 32px;
+    /* Further reducing size for Kabaya Putri and CIG TV */
 }
 
 .partner__logo:hover {
