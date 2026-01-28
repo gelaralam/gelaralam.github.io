@@ -73,14 +73,14 @@ const blogData = [
     },
     {
         "id": 7,
-        "title": "Ngahiras di Kampung Adat Ciptarasa",
-        "description": "Ngahiras di Kampung Adat Ciptarasa. (A Dewan)",
-        "content": "\u003cp\u003eNgahiras di Kampung Adat Ciptarasa. (A Dewan)\u003c/p\u003e",
+        "title": "Ngahiras Kampung Adat Ciptarasa",
+        "description": "Kegiatan pertanian Ngahiras di Kampung Adat Ciptarasa",
+        "content": "\u003cp\u003eKegiatan pertanian Ngahiras di Kampung Adat Ciptarasa (A Dewan)\u003c/p\u003e",
         "day": 28,
         "month": "Januari",
         "year": 2026,
         "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/2581abcd-e161-4e73-be9f-d0bae7cb2758.PNG",
-        "video_url": "https://youtube.com/shorts/HDrBT2Paf0U?si=OnsVQK5EheH6-3LD",
+        "video_url": "https://youtube.com/shorts/HDrBT2Paf0U?si=ERxZmZQqIbFJ9eLJ",
         "category": "PERTANIAN"
     }
 ];
