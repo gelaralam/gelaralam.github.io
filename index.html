@@ -483,7 +483,7 @@
 
                     card.innerHTML = `
                         <div class="testimonial__stars">${starsHtml}</div>
-                        <p class="testimonial__text">"${item.text}"</p>
+                        <p class="testimonial__text">"${item.content || item.text || ''}"</p>
                         <div class="testimonial__author">
                             <img src="${item.photo}" alt="${item.name}" class="testimonial__photo" loading="lazy" decoding="async">
                             <div class="testimonial__details">

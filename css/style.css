@@ -780,6 +780,9 @@ font {
     margin-bottom: 30px;
     font-size: 1.1rem;
     color: #444;
+    line-height: 1.6;
+    display: block;
+    width: 100%;
 }
 
 .testimonial__author {
