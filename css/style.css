@@ -1296,6 +1296,10 @@ font {
     .footer__links {
         gap: 18px;
     }
+
+    .footer__map-link {
+        justify-content: center;
+    }
 }
 
 /* Modal Styles for Public Testimonial */
