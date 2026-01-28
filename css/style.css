@@ -131,6 +131,11 @@ button {
     transition: transform 0.3s ease;
 }
 
+.partner__logo--small {
+    height: 40px;
+    /* Reducing Kabaya Putri logo size */
+}
+
 .partner__logo:hover {
     transform: scale(1.05);
 }
@@ -142,6 +147,10 @@ button {
 
     .partner__logo {
         height: 40px;
+    }
+
+    .partner__logo--small {
+        height: 32px;
     }
 }
 
