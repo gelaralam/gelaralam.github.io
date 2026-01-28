@@ -79,7 +79,7 @@ const blogData = [
         "day": 28,
         "month": "Januari",
         "year": 2026,
-        "image": "",
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/2581abcd-e161-4e73-be9f-d0bae7cb2758.PNG",
         "video_url": "https://youtube.com/shorts/HDrBT2Paf0U?si=OnsVQK5EheH6-3LD",
         "category": "PERTANIAN"
     }
