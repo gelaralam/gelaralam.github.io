@@ -64,16 +64,5 @@ const blogData = [
         "year": 2025,
         "image": "assets/blog/kampung-padi.jpg",
         "category": "STORY"
-    },
-    {
-        "id": 7,
-        "title": "Ngahiras di Kampung Adat Ciptarasa",
-        "description": "Kegiatan Ngahiras di Kampung Adat Ciptarasa. (A Dewan)",
-        "content": "\u003cp\u003eKegiatan Ngahiras di Kampung Adat Ciptarasa. (A Dewan)\u003c/p\u003e",
-        "day": 28,
-        "month": "Januari",
-        "year": 2026,
-        "image": "",
-        "category": "PERTANIAN"
     }
 ];
