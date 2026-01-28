@@ -642,10 +642,10 @@
             const container = document.getElementById('form-fields');
             container.innerHTML = '';
 
-            const field = (label, id, tag = 'input', typeAttr = 'text', val = '') => `
+            const field = (label, id, tag = 'input', typeAttr = 'text', required = true) => `
                 <div class="form-group">
                     <label>${label}</label>
-                    <${tag} ${tag === 'input' ? `type="${typeAttr}"` : ''} id="f-${id}" required>${tag === 'textarea' ? '' : ''}</${tag}>
+                    <${tag} ${tag === 'input' ? `type="${typeAttr}"` : ''} id="f-${id}" ${required ? 'required' : ''}>${tag === 'textarea' ? '' : ''}</${tag}>
                 </div>
             `;
 
@@ -661,6 +661,7 @@
                         </select>
                     </div>
                     ${field('URL Gambar', 'image')}
+                    ${field('YouTube Video URL (Opsional)', 'video_url', 'input', 'text', false)}
                     <div style="display: flex; gap: 10px;">
                         <div style="flex: 1;">${field('Tanggal', 'day', 'input', 'number')}</div>
                         <div style="flex: 1;">${field('Bulan', 'month')}</div>
