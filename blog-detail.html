@@ -478,7 +478,19 @@
 
                 // Render Latest Posts
                 const latestGrid = document.getElementById('latest-posts-grid');
-                const otherPosts = blogData.filter(p => p.id !== postId).slice(0, 3);
+
+                const monthMap = {
+                    'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
+                    'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
+                };
+
+                const sortedData = [...blogData].sort((a, b) => {
+                    const dateA = new Date(a.year, monthMap[a.month] || 0, a.day);
+                    const dateB = new Date(b.year, monthMap[b.month] || 0, b.day);
+                    return dateB - dateA;
+                });
+
+                const otherPosts = sortedData.filter(p => p.id !== postId).slice(0, 3);
 
                 otherPosts.forEach(p => {
                     const card = document.createElement('a');

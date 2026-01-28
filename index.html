@@ -440,7 +440,19 @@
             const blogGrid = document.getElementById('blog-grid');
             const renderBlog = () => {
                 blogGrid.innerHTML = '';
-                blogData.forEach(item => {
+
+                const monthMap = {
+                    'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
+                    'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
+                };
+
+                const sortedData = [...blogData].sort((a, b) => {
+                    const dateA = new Date(a.year, monthMap[a.month] || 0, a.day);
+                    const dateB = new Date(b.year, monthMap[b.month] || 0, b.day);
+                    return dateB - dateA;
+                });
+
+                sortedData.forEach(item => {
                     const card = document.createElement('article');
                     card.className = 'blog__card';
                     card.style.cursor = 'pointer';
