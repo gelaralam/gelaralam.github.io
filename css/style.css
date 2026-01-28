@@ -80,22 +80,22 @@ button {
 }
 
 /* ===================================
-   Top Navigation Extension
+   Pre-Footer Extension
    =================================== */
-.top-nav-section {
+.pre-footer-section {
     height: 160px;
-    background-color: var(--color-bg-dark);
+    background-color: var(--color-bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* ===================================
    Navigation
    =================================== */
 .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
