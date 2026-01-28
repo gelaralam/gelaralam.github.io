@@ -68,8 +68,8 @@ const blogData = [
     {
         "id": 7,
         "title": "Ngahiras di Kampung Adat Ciptarasa",
-        "description": "Kegiatan Ngahiras di Kampung Adat Ciptarasa",
-        "content": "\u003cp\u003eKegiatan Ngahiras di Kampung Adat Ciptarasa\u003c/p\u003e",
+        "description": "Kegiatan Ngahiras di Kampung Adat Ciptarasa. (A Dewan)",
+        "content": "\u003cp\u003eKegiatan Ngahiras di Kampung Adat Ciptarasa. (A Dewan)\u003c/p\u003e",
         "day": 28,
         "month": "Januari",
         "year": 2026,
