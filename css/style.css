@@ -130,12 +130,6 @@ button {
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
-    background-color: #000;
-    /* Added black background */
-    padding: 8px;
-    /* Added padding for background visibility */
-    border-radius: 8px;
-    /* Smooth corners */
 }
 
 .partner__logo--small {
