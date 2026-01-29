@@ -125,15 +125,21 @@ button {
 }
 
 .partner__logo {
-    height: 50px;
+    height: 55px;
+    /* Increased from 50px */
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .partner__logo--small {
-    height: 40px;
-    /* Further reducing size for Kabaya Putri and CIG TV */
+    height: 32px;
+    /* Decreased from 40px for CIGA TV */
+}
+
+.partner__logo--medium {
+    height: 65px;
+    /* Added for TAWISSOCA */
 }
 
 .partner__logo:hover {
@@ -146,11 +152,15 @@ button {
     }
 
     .partner__logo {
-        height: 40px;
+        height: 45px;
     }
 
     .partner__logo--small {
-        height: 32px;
+        height: 28px;
+    }
+
+    .partner__logo--medium {
+        height: 50px;
     }
 }
 
