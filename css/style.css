@@ -1416,7 +1416,7 @@ font {
 
     /* Reduce spacing between Gallery and Blog on mobile */
     .gallery {
-        padding-top: 30px;
+        padding-top: 10px;
         padding-bottom: 30px;
     }
 
