@@ -379,11 +379,11 @@
         </div>
     </footer>
 
-    <script src="js/blog-data.js"></script>
-    <script src="js/budaya-data.js"></script>
-    <script src="js/timeline-data.js"></script>
-    <script src="js/gallery-data.js"></script>
-    <script src="js/testimonial-data.js"></script>
+    <script src="js/blog-data.js?v=1.0.1"></script>
+    <script src="js/budaya-data.js?v=1.0.1"></script>
+    <script src="js/timeline-data.js?v=1.0.1"></script>
+    <script src="js/gallery-data.js?v=1.0.1"></script>
+    <script src="js/testimonial-data.js?v=1.0.1"></script>
     <!-- SCRIPT UTAMA -->
     <script>
         // LOGIC
@@ -530,8 +530,21 @@
             // Testimonials
             const testimonialGrid = document.getElementById('testimonials-grid');
             const renderTestimonials = () => {
+                console.log('[Testimonials] Starting render...');
+                console.log('[Testimonials] Grid element:', testimonialGrid);
+                console.log('[Testimonials] Data available:', typeof testimonialData !== 'undefined');
+
+                if (typeof testimonialData === 'undefined') {
+                    console.error('[Testimonials] ERROR: testimonialData is not defined!');
+                    return;
+                }
+
+                console.log('[Testimonials] Data count:', testimonialData.length);
+                console.log('[Testimonials] Data:', testimonialData);
+
                 testimonialGrid.innerHTML = '';
-                testimonialData.forEach(item => {
+                testimonialData.forEach((item, index) => {
+                    console.log(`[Testimonials] Rendering item ${index}:`, item);
                     const card = document.createElement('div');
                     card.className = 'testimonial__card';
 
@@ -553,6 +566,9 @@
                     `;
                     testimonialGrid.appendChild(card);
                 });
+
+                console.log('[Testimonials] Render complete. Grid HTML length:', testimonialGrid.innerHTML.length);
+                console.log('[Testimonials] Grid children count:', testimonialGrid.children.length);
             };
 
             renderTestimonials();

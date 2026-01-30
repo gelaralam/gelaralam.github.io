@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Testimonial</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <section class="testimonials" id="kontak">
+        <div class="container">
+            <h2 class="section__title">TESTIMONI TEST</h2>
+
+            <div class="testimonials__grid" id="testimonials-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <div id="debug-info" style="margin-top: 2rem; padding: 20px; background: #f0f0f0; border-radius: 8px;">
+                <h3>Debug Info:</h3>
+                <p>Data loaded: <span id="data-status">Checking...</span></p>
+                <p>Number of testimonials: <span id="data-count">0</span></p>
+                <p>Grid element found: <span id="grid-status">Checking...</span></p>
+                <pre id="data-preview"
+                    style="background: #fff; padding: 10px; border-radius: 4px; overflow-x: auto;"></pre>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/testimonial-data.js?v=1.0.1"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialGrid = document.getElementById('testimonials-grid');
+            const dataStatus = document.getElementById('data-status');
+            const dataCount = document.getElementById('data-count');
+            const gridStatus = document.getElementById('grid-status');
+            const dataPreview = document.getElementById('data-preview');
+
+            // Check if data is loaded
+            if (typeof testimonialData !== 'undefined') {
+                dataStatus.textContent = '✅ Loaded';
+                dataStatus.style.color = 'green';
+                dataCount.textContent = testimonialData.length;
+                dataPreview.textContent = JSON.stringify(testimonialData, null, 2);
+            } else {
+                dataStatus.textContent = '❌ Not loaded';
+                dataStatus.style.color = 'red';
+            }
+
+            // Check if grid element exists
+            if (testimonialGrid) {
+                gridStatus.textContent = '✅ Found';
+                gridStatus.style.color = 'green';
+            } else {
+                gridStatus.textContent = '❌ Not found';
+                gridStatus.style.color = 'red';
+            }
+
+            // Render testimonials
+            const renderTestimonials = () => {
+                console.log('Starting to render testimonials...');
+                console.log('testimonialData:', testimonialData);
+                console.log('testimonialGrid:', testimonialGrid);
+
+                if (!testimonialGrid) {
+                    console.error('Grid element not found!');
+                    return;
+                }
+
+                if (!testimonialData || testimonialData.length === 0) {
+                    console.error('No testimonial data!');
+                    return;
+                }
+
+                testimonialGrid.innerHTML = '';
+                testimonialData.forEach((item, index) => {
+                    console.log(`Rendering testimonial ${index}:`, item);
+
+                    const card = document.createElement('div');
+                    card.className = 'testimonial__card';
+
+                    let starsHtml = '';
+                    for (let i = 0; i < item.stars; i++) {
+                        starsHtml += '<i class="fa-solid fa-star"></i>';
+                    }
+
+                    card.innerHTML = `
+                        <div class="testimonial__stars">${starsHtml}</div>
+                        <p class="testimonial__text">"${item.content || item.text || ''}"</p>
+                        <div class="testimonial__author">
+                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo" loading="lazy" decoding="async">
+                            <div class="testimonial__details">
+                                <h4 class="testimonial__name">${item.name}</h4>
+                                <span class="testimonial__origin">${item.origin}</span>
+                            </div>
+                        </div>
+                    `;
+                    testimonialGrid.appendChild(card);
+                    console.log(`Testimonial ${index} added to grid`);
+                });
+
+                console.log('Finished rendering testimonials');
+                console.log('Grid innerHTML length:', testimonialGrid.innerHTML.length);
+            };
+
+            renderTestimonials();
+        });
+    </script>
+</body>
+
+</html>

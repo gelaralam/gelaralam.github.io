@@ -882,6 +882,8 @@ font {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
+    min-height: 200px;
+    /* Ensure grid is visible for debugging */
 }
 
 .testimonial__card {
