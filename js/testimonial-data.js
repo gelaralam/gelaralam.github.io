@@ -1,1 +1,1 @@
-const testimonialData = null;
+const testimonialData = [];
