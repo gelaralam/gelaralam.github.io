@@ -164,21 +164,18 @@ button {
     }
 
     .partner__logo {
-        height: 80px;
-        /* Reduced from 120px */
+        height: 50px;
         flex-shrink: 0;
         width: auto;
         max-width: none;
     }
 
     .partner__logo--small {
-        height: 60px;
-        /* Reduced from 90px */
+        height: 40px;
     }
 
     .partner__logo--medium {
-        height: 90px;
-        /* Reduced from 130px */
+        height: 60px;
     }
 }
 
