@@ -544,20 +544,19 @@
 
                 testimonialGrid.innerHTML = '';
                 testimonialData.forEach((item, index) => {
-                    console.log(`[Testimonials] Rendering item ${index}:`, item);
                     const card = document.createElement('div');
                     card.className = 'testimonial__card';
 
                     let starsHtml = '';
                     for (let i = 0; i < item.stars; i++) {
-                        starsHtml += '<i class="fa-solid fa-star"></i>';
+                        starsHtml += '<i class="fa-solid fa-star"></i> ';
                     }
 
                     card.innerHTML = `
                         <div class="testimonial__stars">${starsHtml}</div>
-                        <p class="testimonial__text">"${item.content || item.text || ''}"</p>
+                        <p class="testimonial__text">${item.content || item.text || ''}</p>
                         <div class="testimonial__author">
-                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo" loading="lazy" decoding="async" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(item.name)}&background=random&color=fff'">
+                            <img src="${item.photo}" alt="${item.name}" class="testimonial__photo" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(item.name)}&background=random&color=fff'">
                             <div class="testimonial__details">
                                 <h4 class="testimonial__name">${item.name}</h4>
                                 <span class="testimonial__origin">${item.origin}</span>

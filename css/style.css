@@ -881,16 +881,38 @@ font {
 .testimonials__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    min-height: 200px;
-    /* Ensure grid is visible for debugging */
+    gap: 30px;
+    margin-top: 3rem;
 }
 
 .testimonial__card {
-    background: #fbfbfb;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+    background: #fff;
+    padding: 50px 40px 40px;
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
+}
+
+.testimonial__card::before {
+    content: '"';
+    position: absolute;
+    top: -5px;
+    left: 40px;
+    font-size: 8rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--color-accent);
+    opacity: 0.15;
+    line-height: 1;
 }
 
 .testimonial__stars {
@@ -901,17 +923,20 @@ font {
 .testimonial__text {
     font-style: italic;
     margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.6;
-    display: block;
-    width: 100%;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
 }
 
 .testimonial__author {
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .testimonial__photo {
@@ -1479,23 +1504,27 @@ font {
     }
 
     .testimonials__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .testimonial__card {
-        padding: 15px;
+        padding: 40px 30px 30px;
+    }
+
+    .testimonial__card::before {
+        left: 25px;
+        font-size: 6rem;
     }
 
     .testimonial__text {
-        font-size: 0.9rem;
-        /* Smaller font for tighter space */
-        margin-bottom: 15px;
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 
     .testimonial__stars {
         margin-bottom: 10px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .footer__container {
