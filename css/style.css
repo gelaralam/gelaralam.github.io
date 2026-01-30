@@ -164,15 +164,15 @@ button {
     }
 
     .partner__logo {
-        height: 45px;
+        height: 70px;
     }
 
     .partner__logo--small {
-        height: 28px;
+        height: 50px;
     }
 
     .partner__logo--medium {
-        height: 50px;
+        height: 80px;
     }
 }
 
