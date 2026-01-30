@@ -1382,9 +1382,45 @@ font {
         gap: 10px;
     }
 
+    .gallery__filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        /* Space for scrollbar if visible */
+        margin-bottom: 1.5rem;
+        /* Reduced margin */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .gallery__filters::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari/Webkit */
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+        padding: 8px 15px;
+        /* Slightly smaller padding */
+        font-size: 0.9rem;
+        /* Slightly smaller font */
+        flex-shrink: 0;
+    }
+
     .gallery__item {
         height: auto;
         aspect-ratio: 1 / 1;
+    }
+
+    /* Reduce spacing between Gallery and Blog on mobile */
+    .gallery {
+        padding-bottom: 30px;
+    }
+
+    .blog {
+        padding-top: 30px;
     }
 
     .footer__container {
