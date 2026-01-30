@@ -1422,6 +1422,32 @@ font {
 
     .blog {
         padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    /* Testimonials mobile adjustments */
+    .testimonials {
+        padding-top: 10px;
+    }
+
+    .testimonials__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .testimonial__card {
+        padding: 15px;
+    }
+
+    .testimonial__text {
+        font-size: 0.9rem;
+        /* Smaller font for tighter space */
+        margin-bottom: 15px;
+    }
+
+    .testimonial__stars {
+        margin-bottom: 10px;
+        font-size: 0.8rem;
     }
 
     .footer__container {
