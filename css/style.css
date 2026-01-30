@@ -804,6 +804,27 @@ font {
     background: var(--color-accent);
 }
 
+.rating-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.rating-star {
+    font-size: 1.5rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating-star.active {
+    color: var(--color-accent);
+}
+
+.rating-star:hover {
+    transform: scale(1.1);
+}
+
 .gallery__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
