@@ -164,20 +164,21 @@ button {
     }
 
     .partner__logo {
-        height: 120px;
+        height: 80px;
+        /* Reduced from 120px */
         flex-shrink: 0;
         width: auto;
-        /* Ensure aspect ratio is preserved */
         max-width: none;
-        /* Override global max-width */
     }
 
     .partner__logo--small {
-        height: 90px;
+        height: 60px;
+        /* Reduced from 90px */
     }
 
     .partner__logo--medium {
-        height: 130px;
+        height: 90px;
+        /* Reduced from 130px */
     }
 }
 
