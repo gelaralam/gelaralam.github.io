@@ -148,7 +148,19 @@ button {
 
 @media (max-width: 768px) {
     .partners__logos {
-        gap: 30px;
+        gap: 40px;
+        flex-wrap: nowrap;
+        animation: marquee 15s linear infinite;
+        justify-content: flex-start;
+        /* Ensure it starts from left if not animating, but animation overrides */
+        width: 100%;
+    }
+
+    .pre-footer__container {
+        overflow: hidden;
+        /* Contain the marquee */
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     .partner__logo {
@@ -1155,6 +1167,16 @@ font {
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }
 
