@@ -19,5 +19,12 @@ const testimonialData = [
         "text": "Kalau dari Bandung sebenernya destinasi yang sangat lengkap pantai lewat, offroad oke, hutan ada dan tiba-tiba kayak nemu surga yang tersembunyi ditengah hutan...respect dijaman sekarang masih ada yang sangat memelihara ada Sunda...",
         "photo": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/c4eb1155-f33a-448e-beb3-76ab5fd9bd9a.jpg",
         "stars": 5
+    },
+    {
+        "name": "Ameesy",
+        "origin": "Bandung",
+        "text": "You’ll have a really FUN experience here! You can also learn about Sundanese culture, traditions, and everyday life. If you’re a total nature lover into mountains, cool air, and beautiful views this place is perfect for you. Trust me, once you’re there, you won’t want to go home!",
+        "photo": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/84a81b70-f7a1-488a-a57c-b297a406283b.jpeg",
+        "stars": 5
     }
 ];
