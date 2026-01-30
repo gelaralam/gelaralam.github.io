@@ -621,7 +621,8 @@
                 submitBtn.innerText = 'MENGIRIM...';
 
                 try {
-                    const response = await fetch('https://data.gelaralam.id/api/testimonial/public', {
+                    console.log('[Testimonial] Submitting to public endpoint...');
+                    const response = await fetch('https://data.gelaralam.id/api/public/testimonial', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -636,7 +637,10 @@
                         }),
                     });
 
+                    console.log('[Testimonial] Response status:', response.status);
+
                     if (response.ok) {
+                        console.log('[Testimonial] Success!');
                         alert('Terima kasih! Cerita Anda telah terkirim dan akan ditinjau oleh tim kami sebelum ditampilkan.');
                         pModal.classList.remove('active');
                         pForm.reset();
@@ -646,20 +650,35 @@
                     } else {
                         // Try to parse error response
                         let errorMsg = 'Gagal mengirim testimoni';
+                        let errorDetail = '';
                         try {
                             const errData = await response.json();
+                            console.error('[Testimonial] Error response:', errData);
                             if (errData.message) errorMsg = errData.message;
                             else if (errData.error) errorMsg = errData.error;
+                            errorDetail = JSON.stringify(errData);
                         } catch (e) {
-                            // If parsing fails, stick to default message
+                            // If parsing fails, get text
+                            errorDetail = await response.text();
+                            console.error('[Testimonial] Error text:', errorDetail);
                         }
+
+                        // Special handling for auth errors (likely cache issue)
+                        if (response.status === 401 && errorMsg.includes('authorization')) {
+                            console.warn('[Testimonial] Auth error detected - likely cache issue');
+                            errorMsg = 'Terjadi kesalahan teknis. Silakan coba:\n\n' +
+                                '1. Buka halaman ini di mode Incognito/Private\n' +
+                                '2. Atau hubungi kami via WhatsApp: +62 812-2241-0859\n\n' +
+                                'Detail teknis: Browser cache mungkin perlu dibersihkan';
+                        }
+
                         throw new Error(errorMsg);
                     }
                 } catch (error) {
-                    console.error('Error:', error);
+                    console.error('[Testimonial] Error:', error);
                     let errorMessage = 'Maaf, terjadi kesalahan saat mengirim cerita.';
                     if (error.message) {
-                        errorMessage += '\nDetail: ' + error.message;
+                        errorMessage += '\n\nDetail: ' + error.message;
                     }
                     alert(errorMessage + '\n\nSilakan cek koneksi internet Anda atau hubungi admin jika masalah berlanjut.');
                 } finally {
