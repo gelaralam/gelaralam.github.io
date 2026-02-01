@@ -880,7 +880,7 @@ font {
    =================================== */
 .testimonials {
     padding: var(--padding-section) 0;
-    background: #fff;
+    background: #f0f0f0;
 }
 
 .testimonials__grid {
