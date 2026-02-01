@@ -964,6 +964,45 @@ font {
     background: #f9f9f9;
 }
 
+.blog__hint {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.animate-swipe {
+    animation: swipeHint 1.5s infinite;
+}
+
+@keyframes swipeHint {
+    0% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog__hint {
+        display: flex;
+    }
+}
+
 .blog__grid {
     display: flex;
     overflow-x: auto;

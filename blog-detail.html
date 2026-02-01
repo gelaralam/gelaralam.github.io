@@ -415,12 +415,12 @@
 
             // Get ID from URL
             const urlParams = new URLSearchParams(window.location.search);
-            const postId = parseInt(urlParams.get('id'));
+            const postId = urlParams.get('id');
 
             const container = document.getElementById('detail-container');
 
             // Find post
-            const post = blogData.find(p => p.id === postId);
+            const post = blogData.find(p => String(p.id) === postId);
 
             if (post) {
                 // Update Page Title
