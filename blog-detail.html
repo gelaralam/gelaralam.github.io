@@ -493,13 +493,15 @@
                 const latestGrid = document.getElementById('latest-posts-grid');
 
                 const monthMap = {
-                    'Januari': 0, 'Februari': 1, 'Maret': 2, 'April': 3, 'Mei': 4, 'Juni': 5,
-                    'Juli': 6, 'Agustus': 7, 'September': 8, 'Oktober': 9, 'November': 10, 'Desember': 11
+                    'januari': 0, 'februari': 1, 'pebruari': 1, 'maret': 2, 'april': 3, 'mei': 4, 'juni': 5,
+                    'juli': 6, 'agustus': 7, 'september': 8, 'oktober': 9, 'november': 10, 'desember': 11
                 };
 
                 const sortedData = [...blogData].sort((a, b) => {
-                    const dateA = new Date(a.year, monthMap[a.month] || 0, a.day);
-                    const dateB = new Date(b.year, monthMap[b.month] || 0, b.day);
+                    const monthA = monthMap[a.month.toLowerCase()] || 0;
+                    const monthB = monthMap[b.month.toLowerCase()] || 0;
+                    const dateA = new Date(a.year, monthA, a.day);
+                    const dateB = new Date(b.year, monthB, b.day);
                     return dateB - dateA;
                 });
 
