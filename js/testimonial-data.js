@@ -9,7 +9,7 @@ const testimonialData = [
     {
         "name": "Hananto",
         "origin": "Temanggung",
-        "text": "Berkunjung ke  Kasepuhan Gelar Alam bikin dada sesak haru bercampur syukur.\n\nDi tengah dunia yang makin berisik dan serba pamer, warga Kasepuhan hidup begitu tenang, sederhana, tanpa banyak suara. Menjalani hidup penuh hormat pada alam, gotong royong, syukur yang tulus semuanya terasa murni, hangat, dan dalam.\n\nRasanya seperti diingatkan pelan: kebahagiaan itu nggak perlu ribut, nggak perlu mewah. Cukup selaras dengan alam, saling jaga, dan bersyukur atas apa yang diberi.\n\nHati langsung adem, rindu ingin ke sana, merasakan langsung kedamaian itu.",
+        "text": "Berkunjung ke  Kasepuhan Gelar Alam bikin dada sesak haru bercampur syukur. Rasanya seperti diingatkan pelan: kebahagiaan itu nggak perlu ribut, nggak perlu mewah. Cukup selaras dengan alam, saling jaga, dan bersyukur atas apa yang diberi.\n\nHati langsung adem, rindu ingin ke sana, merasakan langsung kedamaian itu.",
         "photo": "https://raw.githubusercontent.com/gelaralam/img/main/2026/01/0807e955-3a55-479f-8856-e2b0b48e8ecf.jpeg",
         "stars": 5
     },
