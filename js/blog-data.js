@@ -5,7 +5,7 @@ const blogData = [
         "description": "Terjadi banyak penipuan mengatas namakan Abah Ugi...",
         "content": "\u003cp\u003eAbah Ugi berpesan agar berhati-hati kepada seluruh masyarakat, dimana akhir-akhir banyak terjadi penipuan mengatasnamakan Abah Ugi. Untuk itu Abah Ugi berpesan agar bisa lebih bijak dalam menggunakan media seluler ataupun media sosial lainnya. Jika membutuhkan informasi segera menghubungi no telpon yang tercantum di website resmi Kasepuhan Gelaralam https://gelaralam.id/ atau kirim email di info@gelaralam.id\u003c/p\u003e",
         "day": 5,
-        "month": "Februari",
+        "month": "Pebruari",
         "year": 2026,
         "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/db2ba0e0-a39d-4185-a278-10698489ceae.jpg",
         "video_url": "https://youtube.com/shorts/RKwOolEDl9g?feature=share",
