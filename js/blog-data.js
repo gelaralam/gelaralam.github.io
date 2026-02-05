@@ -1,5 +1,29 @@
 const blogData = [
     {
+        "id": "698466877fdb784eef848783",
+        "title": "Pesan dari Abah Ugi",
+        "description": "Terjadi banyak penipuan mengatas namakan Abah Ugi...",
+        "content": "\u003cp\u003eAbah Ugi berpesan agar berhati-hati kepada seluruh masyarakat, dimana akhir-akhir banyak terjadi penipuan mengatasnamakan Abah Ugi. Untuk itu Abah Ugi berpesan agar bisa lebih bijak dalam menggunakan media seluler ataupun media sosial lainnya. Jika membutuhkan informasi segera menghubungi no telpon yang tercantum di website resmi Kasepuhan Gelaralam https://gelaralam.id/ atau kirim email di info@gelaralam.id\u003c/p\u003e",
+        "day": 5,
+        "month": "Februari",
+        "year": 2026,
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/db2ba0e0-a39d-4185-a278-10698489ceae.jpg",
+        "video_url": "https://youtube.com/shorts/RKwOolEDl9g?feature=share",
+        "category": "BERITA"
+    },
+    {
+        "id": "697f4b8bb1ce76ed2c68f55c",
+        "title": "Rajaban di Kasepuhan Gelaralam",
+        "description": "Sabtu, 31 Januari 2026 menjadi malam yang berbeda di antara malam-malam 31 Januari di tahun sebelumnya…",
+        "content": "\u003cp\u003eRAJABAN DI KASEPUHAN GELARALAM\u003c/p\u003e\n\u003cp\u003eSabtu, 31 Januari 2026 menjadi malam yang berbeda di antara malam-malam 31 Januari di tahun sebelumnya, Kasepuhan Gelaralam mengadakan Pengajian dan Khutbah bersama dalam suasana bulan Rajab dan kentalnya perjalanan Isra Miraj.\u003c/p\u003e\n\u003cp\u003eAcara tersebut diinisiasi oleh para DKM masjid Kasepuhan Gelaralam dan diikuti oleh ratusan Incu-Putu yang tersebar di Dusun Sukamulya, Desa Sirnaresmi dan dihadiri oleh Kepada Desa Sirnaresmi, Bapak Jaro Iwan Suwandi.\u003c/p\u003e\n\u003cp\u003eDalam pengetahuan traditional Kasepuhan Gelaralam, dikenal istilah Sara, Nagara, Mokaha yang dalam artian singkat Bariskolot berarti tiga pilar keutamaan hidup mencakup: Sara sebagai pondasi awal kehidupan yang dilandasi dari pola Agama, Nagara sebagai pondasi kebangsaan agar setiap orang dapat menanamkan Nasionalism dalam berkehidupan, dan Mokaha yang berarti Adat atau Tradisi yang menjadi tumpuan agar setiap masyarakat tidak kehilangan jati diri sebagai orang yang berbudaya.\u003c/p\u003e\n\u003cp\u003eMenurut Jaro Iwan selaku pemangku kebijakan desa, ia sangat menyambut acara rajaban tersebut karena menjadi sebuah pengingat bahwa masyarakat kasepuhan masih mengenal Sara yang dibungkus dalam balut tradisi, sehingga  ada keselarasan antara unsur agama beserta budaya yang masih terlihat di kawasan Kasepuhan Gelaralam. Ia berharap semoga tahun depan acara tersebut lebih tertara dan lebih baik, serta mengingatkan pentingnya agama sebagai landasan agar kita tetap menjadi masyarakat adat yang tidak anti terhadap nilai-nilai agama.\u003c/p\u003e\n\u003cp\u003e(Tama)\u003c/p\u003e",
+        "day": 1,
+        "month": "Pebruari",
+        "year": 2026,
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/e090f04e-55cf-4864-bcaf-72a7a31e329d.jpeg",
+        "video_url": "https://youtube.com/shorts/AtKTXjnxIzM",
+        "category": "TRADISI"
+    },
+    {
         "id": "6979e91bb132082d0bf304a8",
         "title": "Ngahiras Kampung Adat Ciptarasa",
         "description": "Kegiatan pertanian Ngahiras di Kampung Adat Ciptarasa",
@@ -34,18 +58,6 @@ const blogData = [
         "image": "assets/blog/blog-1.jpg",
         "video_url": "",
         "category": "EKONOMI"
-    },
-    {
-        "id": "697f4b8bb1ce76ed2c68f55c",
-        "title": "Rajaban di Kasepuhan Gelaralam",
-        "description": "Sabtu, 31 Januari 2026 menjadi malam yang berbeda di antara malam-malam 31 Januari di tahun sebelumnya…",
-        "content": "\u003cp\u003eRAJABAN DI KASEPUHAN GELARALAM\u003c/p\u003e\n\u003cp\u003eSabtu, 31 Januari 2026 menjadi malam yang berbeda di antara malam-malam 31 Januari di tahun sebelumnya, Kasepuhan Gelaralam mengadakan Pengajian dan Khutbah bersama dalam suasana bulan Rajab dan kentalnya perjalanan Isra Miraj.\u003c/p\u003e\n\u003cp\u003eAcara tersebut diinisiasi oleh para DKM masjid Kasepuhan Gelaralam dan diikuti oleh ratusan Incu-Putu yang tersebar di Dusun Sukamulya, Desa Sirnaresmi dan dihadiri oleh Kepada Desa Sirnaresmi, Bapak Jaro Iwan Suwandi.\u003c/p\u003e\n\u003cp\u003eDalam pengetahuan traditional Kasepuhan Gelaralam, dikenal istilah Sara, Nagara, Mokaha yang dalam artian singkat Bariskolot berarti tiga pilar keutamaan hidup mencakup: Sara sebagai pondasi awal kehidupan yang dilandasi dari pola Agama, Nagara sebagai pondasi kebangsaan agar setiap orang dapat menanamkan Nasionalism dalam berkehidupan, dan Mokaha yang berarti Adat atau Tradisi yang menjadi tumpuan agar setiap masyarakat tidak kehilangan jati diri sebagai orang yang berbudaya.\u003c/p\u003e\n\u003cp\u003eMenurut Jaro Iwan selaku pemangku kebijakan desa, ia sangat menyambut acara rajaban tersebut karena menjadi sebuah pengingat bahwa masyarakat kasepuhan masih mengenal Sara yang dibungkus dalam balut tradisi, sehingga  ada keselarasan antara unsur agama beserta budaya yang masih terlihat di kawasan Kasepuhan Gelaralam. Ia berharap semoga tahun depan acara tersebut lebih tertara dan lebih baik, serta mengingatkan pentingnya agama sebagai landasan agar kita tetap menjadi masyarakat adat yang tidak anti terhadap nilai-nilai agama.\u003c/p\u003e\n\u003cp\u003e(Tama)\u003c/p\u003e",
-        "day": 1,
-        "month": "Pebruari",
-        "year": 2026,
-        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/e090f04e-55cf-4864-bcaf-72a7a31e329d.jpeg",
-        "video_url": "https://youtube.com/shorts/AtKTXjnxIzM",
-        "category": "TRADISI"
     },
     {
         "id": "69785d71f3ee1c83cf4744ce",
