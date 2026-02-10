@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gelaralam.id/sitemap.xml

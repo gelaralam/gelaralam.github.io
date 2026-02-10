@@ -4,22 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Blog Detail | Kasepuhan Gelaralam</title>
+    <meta name="description" id="meta-description" content="Baca berita dan kegiatan terbaru dari Kasepuhan Gelaralam.">
+    <meta name="keywords" id="meta-keywords" content="Kasepuhan Gelaralam, berita, kegiatan, tradisi Sunda, Sukabumi">
 
     <!-- Open Graph for Sharing -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://gelaralam.id/blog-detail.html">
+    <meta property="og:url" id="og-url" content="https://gelaralam.id/blog-detail.html">
     <meta property="og:site_name" content="Kasepuhan Gelaralam">
     <meta property="og:title" id="og-title" content="Blog | Kasepuhan Gelaralam">
     <meta property="og:description" id="og-description"
         content="Baca berita dan kegiatan terbaru dari Kasepuhan Gelaralam.">
-    <meta property="og:image" content="https://gelaralam.id/assets/og-logo.png">
+    <meta property="og:image" id="og-image" content="https://gelaralam.id/assets/og-logo.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="https://gelaralam.id/assets/og-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" id="twitter-title" content="Blog | Kasepuhan Gelaralam">
+    <meta name="twitter:description" id="twitter-description"
+        content="Baca berita dan kegiatan terbaru dari Kasepuhan Gelaralam.">
+    <meta name="twitter:image" id="twitter-image" content="https://gelaralam.id/assets/og-logo.png">
+
+    <!-- Structured Data Placeholder -->
+    <script type="application/ld+json" id="structured-data">
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -423,8 +431,44 @@
             const post = blogData.find(p => String(p.id) === postId);
 
             if (post) {
-                // Update Page Title
-                document.title = `${post.title} | Kasepuhan Gelaralam`;
+                // Update Page Meta Tags for SEO
+                const pageTitle = `${post.title} | Kasepuhan Gelaralam`;
+                document.title = pageTitle;
+
+                document.getElementById('meta-description')?.setAttribute('content', post.description);
+                document.getElementById('meta-keywords')?.setAttribute('content', `${post.category}, Kasepuhan Gelaralam, ${post.title}`);
+
+                document.getElementById('og-title')?.setAttribute('content', pageTitle);
+                document.getElementById('og-description')?.setAttribute('content', post.description);
+                document.getElementById('og-url')?.setAttribute('content', window.location.href);
+                if (post.image) document.getElementById('og-image')?.setAttribute('content', post.image.startsWith('http') ? post.image : `https://gelaralam.id/${post.image}`);
+
+                document.getElementById('twitter-title')?.setAttribute('content', pageTitle);
+                document.getElementById('twitter-description')?.setAttribute('content', post.description);
+                if (post.image) document.getElementById('twitter-image')?.setAttribute('content', post.image.startsWith('http') ? post.image : `https://gelaralam.id/${post.image}`);
+
+                // Inject Structured Data (JSON-LD)
+                const ldJson = {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.description,
+                    "image": post.image ? (post.image.startsWith('http') ? post.image : `https://gelaralam.id/${post.image}`) : "https://gelaralam.id/assets/og-logo.png",
+                    "author": {
+                        "@type": "Organization",
+                        "name": "Kasepuhan Gelaralam"
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Kasepuhan Gelaralam",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://gelaralam.id/assets/logo.png"
+                        }
+                    },
+                    "datePublished": `${post.year}-${String(post.month).padStart(2, '0')}-${String(post.day).padStart(2, '0')}`
+                };
+                document.getElementById('structured-data').text = JSON.stringify(ldJson);
 
                 // Render content
                 container.innerHTML = `
