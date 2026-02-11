@@ -478,6 +478,31 @@
             // Navbar
             document.getElementById('nav-toggle').onclick = () => document.getElementById('nav-menu').classList.toggle('active');
 
+            // Hero Slider Logic
+            const heroDots = document.querySelectorAll('.hero__dot');
+            const heroSlides = document.querySelectorAll('.hero__slide');
+
+            heroDots.forEach((dot, index) => {
+                dot.onclick = () => {
+                    // Update dots
+                    heroDots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+
+                    // Update slides
+                    heroSlides.forEach(s => s.classList.remove('active'));
+                    heroSlides[index].classList.add('active');
+                };
+            });
+
+            // Make slides clickable as well (requested: "slide atau dot tidak bisa di klik")
+            heroSlides.forEach((slide, index) => {
+                slide.onclick = () => {
+                    // Go to next slide on click
+                    const nextIndex = (index + 1) % heroSlides.length;
+                    heroDots[nextIndex].click();
+                };
+            });
+
             // Sejarah Dots
             document.querySelectorAll('.sejarah__dot').forEach(dot => {
                 dot.onclick = function () {
