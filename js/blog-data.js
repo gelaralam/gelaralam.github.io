@@ -1,5 +1,17 @@
 const blogData = [
     {
+        "id": "698c4234360142f457e82166",
+        "title": "NGAREREMOKEUN",
+        "description": "Ngareremokeun berarti Meramaikan, dalam pandangan masyarakat kasepuhan, padi dibagi menjadi dua entitas, yaitu Pare Awewe dan Pare Lalaki yang nantinya hasil dari perkawinan tersbut melahirkan entitas bernama Pare Indung.",
+        "content": "\u003cp\u003eNgareremokeun berarti Meramaikan, dalam pandangan masyarakat kasepuhan, padi dibagi menjadi dua entitas, yaitu Pare Awewe dan Pare Lalaki yang nantinya hasil dari perkawinan tersbut melahirkan entitas bernama Pare Indung. Simbol Pare Indung bermakna asal dan kesatuan dimana sudah tidak ada lagi konsepsi peran Laki-laki dan Perempuan dan hanya menghasilkan entitas Tunggal bernama Indung. Karena maknanya yang sangat dalam dan perannya sangat dihormati, pare indung wajib dibageakeun (dibahagiakan) dalam siklus tiga tahun setelah perpindahan dilanjut setiap delapan tahun sekali dalam Ritual Ngareremokeun. Setiap kaolotan dari 568 diwajibkan membawa satu pocong pare indung pada ritual tersebut, dan seluruh orang yang terlibat dalam ritual diwajibkan untuk memakai baju putih dan iket putih sebagai penanda kemurnian acara dan kesakralan acara.\u003c/p\u003e\n\u003cp\u003eAngklung dogdog lojor merupakan salah satu seni yang disakralkan oleh masyarakat kasepuhan karena perannya yang sentral pada setiap perayaan-perayaan inti kasepuhan termasuk pada ritual Ngareremokeun. Tradisi ngareremokeun merupakan tradisi langka yang hanya dilaksanakan ketika kasepuhan baru menginjaki tiga tahun pertama setelah perpindahan, untuk kemudian tradisi ngareremokeun ini diadakan pada delapan tahun selanjutnya mengikuti itungan Sawindu.\u003c/p\u003e",
+        "day": 11,
+        "month": "Pebruari",
+        "year": 2026,
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/92a871d7-657b-4fcb-9cf9-7e6b8fa601a8.PNG",
+        "video_url": "https://www.youtube.com/watch?v=JO0EzJLuePg",
+        "category": "TRADISI"
+    },
+    {
         "id": "698466877fdb784eef848783",
         "title": "Pesan dari Abah Ugi",
         "description": "Terjadi banyak penipuan mengatas namakan Abah Ugi...",
