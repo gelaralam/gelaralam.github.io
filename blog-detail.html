@@ -504,6 +504,29 @@
                         ${post.content || post.description}
                     </div>
 
+                    <!-- Comment Section -->
+                    <div class="comments-section" id="comments-section" style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 40px;">
+                        <h2 class="comments-section__title">Komentar</h2>
+                        <div id="comments-list" class="comments-list">
+                            <p class="no-comments">Memuat komentar...</p>
+                        </div>
+
+                        <div class="comment-form-box">
+                            <h3 class="comment-form__title">Tinggalkan Tanggapan</h3>
+                            <form id="comment-form" class="comment-form">
+                                <div class="form-group">
+                                    <label for="c-name">Nama Lengkap</label>
+                                    <input type="text" id="c-name" placeholder="Masukkan nama Anda" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-content">Komentar</label>
+                                    <textarea id="c-content" rows="4" placeholder="Ceritakan pendapat atau pengalaman Anda..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary" id="submit-comment">KIRIM KOMENTAR</button>
+                            </form>
+                        </div>
+                    </div>
+
                     <!-- Latest Posts Section -->
                     <div class="latest-posts">
                         <h2 class="latest-posts__title">Berita Terkait Lainnya</h2>
@@ -529,29 +552,6 @@
                             <a href="https://www.instagram.com/kasepuhangelaralamofficial/" target="_blank" class="share-btn" title="Ikuti kami di Instagram">
                                 <i class="fa-brands fa-instagram"></i>
                             </a>
-                        </div>
-                    </div>
-
-                    <!-- Comment Section -->
-                    <div class="comments-section" id="comments-section">
-                        <h2 class="comments-section__title">Komentar</h2>
-                        <div id="comments-list" class="comments-list">
-                            <p class="no-comments">Memuat komentar...</p>
-                        </div>
-
-                        <div class="comment-form-box">
-                            <h3 class="comment-form__title">Tinggalkan Tanggapan</h3>
-                            <form id="comment-form" class="comment-form">
-                                <div class="form-group">
-                                    <label for="c-name">Nama Lengkap</label>
-                                    <input type="text" id="c-name" placeholder="Masukkan nama Anda" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="c-content">Komentar</label>
-                                    <textarea id="c-content" rows="4" placeholder="Ceritakan pendapat atau pengalaman Anda..." required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn--primary" id="submit-comment">KIRIM KOMENTAR</button>
-                            </form>
                         </div>
                     </div>
                 `;
