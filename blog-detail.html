@@ -531,7 +531,107 @@
                             </a>
                         </div>
                     </div>
+
+                    <!-- Comment Section -->
+                    <div class="comments-section" id="comments-section">
+                        <h2 class="comments-section__title">Komentar</h2>
+                        <div id="comments-list" class="comments-list">
+                            <p class="no-comments">Memuat komentar...</p>
+                        </div>
+
+                        <div class="comment-form-box">
+                            <h3 class="comment-form__title">Tinggalkan Tanggapan</h3>
+                            <form id="comment-form" class="comment-form">
+                                <div class="form-group">
+                                    <label for="c-name">Nama Lengkap</label>
+                                    <input type="text" id="c-name" placeholder="Masukkan nama Anda" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-content">Komentar</label>
+                                    <textarea id="c-content" rows="4" placeholder="Ceritakan pendapat atau pengalaman Anda..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn--primary" id="submit-comment">KIRIM KOMENTAR</button>
+                            </form>
+                        </div>
+                    </div>
                 `;
+
+                // Logic for Comments
+                const commentsList = document.getElementById('comments-list');
+                const commentForm = document.getElementById('comment-form');
+
+                // Load Comments
+                const loadComments = async () => {
+                    try {
+                        const response = await fetch(`https://data.gelaralam.id/api/public/comment/${postId}`);
+                        if (response.ok) {
+                            const comments = await response.json();
+                            if (comments && comments.length > 0) {
+                                commentsList.innerHTML = '';
+                                comments.forEach(c => {
+                                    const date = new Date(c.created_at).toLocaleDateString('id-ID', {
+                                        day: 'numeric',
+                                        month: 'long',
+                                        year: 'numeric'
+                                    });
+                                    const div = document.createElement('div');
+                                    div.className = 'comment-item';
+                                    div.innerHTML = `
+                                        <div class="comment-item__header">
+                                            <span class="comment-item__name">${c.name}</span>
+                                            <span class="comment-item__date">${date}</span>
+                                        </div>
+                                        <p class="comment-item__content">${c.content}</p>
+                                    `;
+                                    commentsList.appendChild(div);
+                                });
+                            } else {
+                                commentsList.innerHTML = '<p class="no-comments">Belum ada komentar. Jadilah yang pertama!</p>';
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error loading comments:', error);
+                        commentsList.innerHTML = '<p class="no-comments">Gagal memuat komentar.</p>';
+                    }
+                };
+
+                loadComments();
+
+                // Submit Comment
+                commentForm.onsubmit = async (e) => {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('submit-comment');
+                    const name = document.getElementById('c-name').value;
+                    const content = document.getElementById('c-content').value;
+
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = 'MENGIRIM...';
+
+                    try {
+                        const response = await fetch('https://data.gelaralam.id/api/public/comment', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                post_id: postId,
+                                name: name,
+                                content: content
+                            })
+                        });
+
+                        if (response.ok) {
+                            alert('Terima kasih! Komentar Anda telah terkirim dan akan muncul setelah ditinjau oleh admin.');
+                            commentForm.reset();
+                        } else {
+                            alert('Gagal mengirim komentar. Silakan coba lagi nanti.');
+                        }
+                    } catch (error) {
+                        console.error('Error submitting comment:', error);
+                        alert('Terjadi kesalahan koneksi.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'KIRIM KOMENTAR';
+                    }
+                };
 
                 // Render Latest Posts
                 const latestGrid = document.getElementById('latest-posts-grid');
