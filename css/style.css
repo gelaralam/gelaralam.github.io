@@ -376,31 +376,55 @@ font {
 .hero__description {
     font-size: 1.1rem;
     line-height: 1.2;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--color-text-muted);
     text-align: justify;
-    max-height: 250px;
-    overflow-y: auto;
-    padding-right: 15px;
 }
 
-/* Custom Scrollbar for Hero Description */
-.hero__description::-webkit-scrollbar {
-    width: 6px;
+/* Custom Scrollbar for Hero Description - REMOVED since we use slider now */
+/*.hero__description::-webkit-scrollbar { ... }*/
+
+/* Hero Slider Section */
+.hero__slider-container {
+    margin-bottom: 3rem;
 }
 
-.hero__description::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+.hero__slider {
+    position: relative;
 }
 
-.hero__description::-webkit-scrollbar-thumb {
+.hero__slide {
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.hero__slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.hero__dots {
+    display: flex;
+    gap: 12px;
+    margin-top: 1.5rem;
+    justify-content: flex-start;
+}
+
+.hero__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.hero__dot.active {
     background: var(--color-accent);
-    border-radius: 10px;
-}
-
-.hero__description::-webkit-scrollbar-thumb:hover {
-    background: rgba(212, 175, 55, 0.8);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px var(--color-accent-glow);
+    border-color: var(--color-accent);
 }
 
 .hero__identity-labels {

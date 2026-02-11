@@ -1,15 +1,12 @@
 /**
- * Sejarah Section Text Carousel
+ * Generic Text Carousel
  * Handles switching between text slides when navigation dots are clicked.
  */
-function initSejarahCarousel() {
-    const dots = document.querySelectorAll('.sejarah__dot');
-    const slides = document.querySelectorAll('.sejarah__slide');
+function initTextCarousel(dotSelector, slideSelector, sectionId) {
+    const dots = document.querySelectorAll(dotSelector);
+    const slides = document.querySelectorAll(slideSelector);
 
-    if (!dots.length || !slides.length) {
-        console.warn('Sejarah Carousel: Dots or slides not found.');
-        return;
-    }
+    if (!dots.length || !slides.length) return;
 
     dots.forEach((dot) => {
         dot.addEventListener('click', function () {
@@ -28,26 +25,33 @@ function initSejarahCarousel() {
             if (slides[slideIndex]) {
                 slides[slideIndex].classList.add('active');
 
-                // UX Improvement: Scroll to the top of the Sejarah section 
-                // so the user starts reading the new paragraph from the beginning.
-                const sejarahSection = document.getElementById('sejarah');
-                if (sejarahSection) {
-                    const offsetTop = sejarahSection.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                // UX Improvement: Scroll to the top of the section (optional)
+                if (sectionId) {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        const offsetTop = section.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
-            } else {
-                console.error('Sejarah Carousel: Slide not found at index', slideIndex);
             }
         });
     });
 }
 
+function initializeAllCarousels() {
+    // Sejarah Slider
+    initTextCarousel('.sejarah__dot', '.sejarah__slide', 'sejarah');
+
+    // Hero Slider
+    initTextCarousel('.hero__dot', '.hero__slide', 'beranda');
+}
+
 // Global initialization check
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSejarahCarousel);
+    document.addEventListener('DOMContentLoaded', initializeAllCarousels);
 } else {
-    initSejarahCarousel();
+    initializeAllCarousels();
 }
