@@ -5,7 +5,7 @@ const blogData = [
         "description": "Keluarga Besar Kasepuhan Gelaralam Seja Ngawilujengkeun Saum Ramadhan 1447 H",
         "content": "\u003cp\u003eWilujeng Saum Ramadhan 1447 H\u003c/p\u003e",
         "day": 18,
-        "month": "Februari",
+        "month": "Pebruari",
         "year": 2026,
         "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/d59bc54a-f27c-46a9-a3b6-ae974eca6ed4.jpeg",
         "video_url": "",
