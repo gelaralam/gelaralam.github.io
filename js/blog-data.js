@@ -1,5 +1,17 @@
 const blogData = [
     {
+        "id": "69958236360142f457e82168",
+        "title": "Wilujeng Saum Ramadhan 1447 H",
+        "description": "Keluarga Besar Kasepuhan Gelaralam Seja Ngawilujengkeun Saum Ramadhan 1447 H",
+        "content": "\u003cp\u003eWilujeng Saum Ramadhan 1447 H\u003c/p\u003e",
+        "day": 18,
+        "month": "Februari",
+        "year": 2026,
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/d59bc54a-f27c-46a9-a3b6-ae974eca6ed4.jpeg",
+        "video_url": "",
+        "category": "BERITA"
+    },
+    {
         "id": "698c4234360142f457e82166",
         "title": "NGAREREMOKEUN",
         "description": "Ngareremokeun berarti Meramaikan, dalam pandangan masyarakat kasepuhan, padi dibagi menjadi dua entitas, yaitu Pare Awewe dan Pare Lalaki yang nantinya hasil dari perkawinan tersbut melahirkan entitas bernama Pare Indung.",
