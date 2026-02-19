@@ -8,7 +8,7 @@ const blogData = [
         "month": "Pebruari",
         "year": 2026,
         "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/02/d59bc54a-f27c-46a9-a3b6-ae974eca6ed4.jpeg",
-        "video_url": "",
+        "video_url": "https://youtu.be/xeqYqxSo7kk?si=JvCD58QgFixTI48Y",
         "category": "BERITA"
     },
     {
