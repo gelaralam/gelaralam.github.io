@@ -138,7 +138,7 @@
                 <h1 class="hero__title">GELARALAM</h1>
                 <div class="hero__slider-container">
                     <div class="hero__slider">
-                        <div class="hero__slide active" data-slide="0">
+                        <div class="hero__slide active" data-slide="0" data-bg="assets/hero-bg.jpg">
                             <p class="hero__description">
                                 Kasepuhan Gelaralam adalah salah satu masyarakat adat yang ada di Jawa Barat. Hingga
                                 hari ini
@@ -149,7 +149,7 @@
                                 hidup Masyarakat Sunda lama.
                             </p>
                         </div>
-                        <div class="hero__slide" data-slide="1">
+                        <div class="hero__slide" data-slide="1" data-bg="assets/hero-bg.jpg">
                             <p class="hero__description">
                                 Semua hal yang berhubungan dengan padi diolah menggunakan alat-alat tradisional. Dalam
                                 konteks ini, masyarakat Kasepuhan Gelaralam memiliki pepatah Ciri sabumi Cara
@@ -160,7 +160,7 @@
                                 leluhurnya.
                             </p>
                         </div>
-                        <div class="hero__slide" data-slide="2">
+                        <div class="hero__slide" data-slide="2" data-bg="assets/hero-bg.jpg">
                             <p class="hero__description">
                                 Kapamalian atau pantrangan di kampung adat ini masih sangat diterapkan. Masyarakat
                                 kasepuhan dilarang menjual belikan beras dan nasi, menggunakan kendaraan untuk membawa
@@ -168,11 +168,30 @@
                                 adat dan tradisi leluhurnya.
                             </p>
                         </div>
+                        <div class="hero__slide" data-slide="3" data-bg="assets/hero-line-pasifik.jpg">
+                            <p class="hero__description">
+                                <b>LINE PASIFIK ANTAR BAKTI</b><br>
+                                Kulawargi Abah Ugi Sugriana R sareng Mamah Dede (Mamah Dhita Ana Talia) NYELAMKEUN Putra
+                                Ka 2 (Dua) ti Abah Ugi Sugriana R Sareng (Almh) Mamah Desri Dwi Deliyanti (Mamah Alit).
+                                <br><br>
+                                <b>8 - 15 April 2026</b>
+                            </p>
+                        </div>
                     </div>
                     <div class="hero__dots">
                         <div class="hero__dot active" data-slide="0"></div>
                         <div class="hero__dot" data-slide="1"></div>
                         <div class="hero__dot" data-slide="2"></div>
+                        <div class="hero__dot" data-slide="3"></div>
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="hero__nav">
+                        <button class="hero__nav-btn hero__nav-btn--prev" id="hero-prev" aria-label="Previous slide">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="hero__nav-btn hero__nav-btn--next" id="hero-next" aria-label="Next slide">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="hero__identity-labels">
@@ -482,27 +501,72 @@
             // Hero Slider Logic
             const heroDots = document.querySelectorAll('.hero__dot');
             const heroSlides = document.querySelectorAll('.hero__slide');
+            const heroPrev = document.getElementById('hero-prev');
+            const heroNext = document.getElementById('hero-next');
+            let currentHeroSlide = 0;
+
+            const updateHeroSlider = (index) => {
+                currentHeroSlide = index;
+                // Update dots
+                heroDots.forEach(d => d.classList.remove('active'));
+                heroDots[index].classList.add('active');
+
+                // Update slides
+                heroSlides.forEach(s => s.classList.remove('active'));
+                heroSlides[index].classList.add('active');
+
+                // Update Background
+                const bg = heroSlides[index].dataset.bg;
+                if (bg) {
+                    const heroElement = document.querySelector('.hero');
+                    heroElement.style.backgroundImage = `url('${bg}')`;
+                }
+            };
 
             heroDots.forEach((dot, index) => {
-                dot.onclick = () => {
-                    // Update dots
-                    heroDots.forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-
-                    // Update slides
-                    heroSlides.forEach(s => s.classList.remove('active'));
-                    heroSlides[index].classList.add('active');
-                };
+                dot.onclick = () => updateHeroSlider(index);
             });
 
-            // Make slides clickable as well (requested: "slide atau dot tidak bisa di klik")
+            // Navigation Arrows
+            if (heroPrev) {
+                heroPrev.onclick = () => {
+                    const nextIndex = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+                    updateHeroSlider(nextIndex);
+                };
+            }
+
+            if (heroNext) {
+                heroNext.onclick = () => {
+                    const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+                    updateHeroSlider(nextIndex);
+                };
+            }
+
+            // Make slides clickable as well
             heroSlides.forEach((slide, index) => {
                 slide.onclick = () => {
-                    // Go to next slide on click
                     const nextIndex = (index + 1) % heroSlides.length;
-                    heroDots[nextIndex].click();
+                    updateHeroSlider(nextIndex);
                 };
             });
+
+            // Auto slide (Optional but good for UX)
+            let heroAutoSlide = setInterval(() => {
+                const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+                updateHeroSlider(nextIndex);
+            }, 8000);
+
+            // Pause auto slide on hover
+            const sliderContainer = document.querySelector('.hero__slider-container');
+            if (sliderContainer) {
+                sliderContainer.onmouseenter = () => clearInterval(heroAutoSlide);
+                sliderContainer.onmouseleave = () => {
+                    heroAutoSlide = setInterval(() => {
+                        const nextIndex = (currentHeroSlide + 1) % heroSlides.length;
+                        updateHeroSlider(nextIndex);
+                    }, 8000);
+                };
+            }
 
             // Sejarah Dots
             document.querySelectorAll('.sejarah__dot').forEach(dot => {

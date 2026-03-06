@@ -336,6 +336,7 @@ font {
     align-items: center;
     color: #fff;
     padding-top: 80px;
+    transition: background-image 0.8s ease-in-out;
 }
 
 
@@ -425,6 +426,41 @@ font {
     transform: scale(1.3);
     box-shadow: 0 0 10px var(--color-accent-glow);
     border-color: var(--color-accent);
+}
+
+/* Hero Navigation Arrows */
+.hero__nav {
+    display: flex;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.hero__nav-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(5px);
+}
+
+.hero__nav-btn:hover {
+    background: var(--color-accent);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+    border-color: var(--color-accent);
+}
+
+.hero__nav-btn:active {
+    transform: translateY(0);
 }
 
 .hero__identity-labels {
