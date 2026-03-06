@@ -428,39 +428,81 @@ font {
     border-color: var(--color-accent);
 }
 
-/* Hero Navigation Arrows */
-.hero__nav {
+/* Main Hero Wrapper & Toggle Slides */
+.hero__main-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__main-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
-    gap: 15px;
-    margin-top: 1.5rem;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.hero__main-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+/* Full Image Slide Styling */
+#hero-main-image {
+    background: #000;
+}
+
+.hero__full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Navigation Arrow Container */
+.hero__nav-container {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
 }
 
 .hero__nav-btn {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--color-accent);
     color: var(--color-accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
+    pointer-events: auto;
     backdrop-filter: blur(5px);
 }
 
 .hero__nav-btn:hover {
     background: var(--color-accent);
     color: #000;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-    border-color: var(--color-accent);
-}
-
-.hero__nav-btn:active {
-    transform: translateY(0);
+    transform: scale(1.1);
 }
 
 .hero__identity-labels {
