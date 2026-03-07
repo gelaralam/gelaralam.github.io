@@ -1,5 +1,17 @@
 const blogData = [
     {
+        "id": "69abeffac4839259bfba0f36",
+        "title": "NYELAMKEUN LINE PASIFIK ANTAR BAKTI",
+        "description": "Kulawargi Abah Ugi Sugriana R sareng Mamah Dede (Mamah Dhita Ana Talia) Nyelamkeun LINE PASIFIK ANTAR BAKTI putra kadua ti Abah Ugi Sugriana R sareng (Almh) Mamah Desri Dwi Deliyanti (Mamah Alit)",
+        "content": "\u003cp\u003eAssalamu’alaikum Warohmatullohi Wabarokatuh\u003c/p\u003e\n\u003cp\u003ePun tabé pun sampurasun\u003c/p\u003e\n\u003cp\u003eGinulur rahayu ti nu Maha Agung, ginanjar waluya ti nu Maha Kawasa, kalayan jiad pangriksa ti sepuh tur karuhun, mituhu rasaning panungtun batin geusan nedunan paménta wayah tur wasa-Na midangkeun tembang lalampahan mungkas alam bubudakeun, ngeureut reregedna diri, nyinglar sadaya kokotor. Wening galih nu dipamrih kalayan diangkir linggih dina raraga nyelamkeun pun anak anu baris dilaksanakeun dina:\u003c/p\u003e\n\u003cp\u003eDinten: Rebo - Minggu\u003c/p\u003e\n\u003cp\u003ePing: 8 - 15 April 2026\u003c/p\u003e\n\u003cp\u003eWaktos: Tabuh 10.00 WIB dugi ka réngsé\u003c/p\u003e\n\u003cp\u003eTempat: Kasepuhan Gelaralam, Desa Sirnaresmi, Kecamatan Cisolok, Kabupaten Sukabumi\u003c/p\u003e\n\u003cp\u003ePamugi bapa/ibu/sadérék tiasa sumping dina waktosna pikeun sasarengan jajap pangdunga kanggo pun anak kalayan disarengan ku rohmat kalayan widi Mantena aya dina ginanjar kawilujengan sapapaosna. Jembar hampura nu diteda. Cag, rampés.\u003c/p\u003e\n\u003cp\u003eWassalamu’alaikum Warohmatullohi Wabarokatuh.\u003c/p\u003e",
+        "day": 7,
+        "month": "Maret",
+        "year": 2026,
+        "image": "https://raw.githubusercontent.com/gelaralam/img/main/2026/03/a7dbab1d-e6a6-46d0-8e86-9246b7ff94e3.jpg",
+        "video_url": "",
+        "category": "BERITA"
+    },
+    {
         "id": "69958236360142f457e82168",
         "title": "Wilujeng Saum Ramadhan 1447 H",
         "description": "Keluarga Besar Kasepuhan Gelaralam Seja Ngawilujengkeun Saum Ramadhan 1447 H",
