@@ -1485,6 +1485,22 @@ font {
         background-position: 25% center !important;
     }
 
+    .hero__full-img {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .hero__nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .hero__nav-container {
+        left: 10px;
+        right: 10px;
+    }
+
     .hero__content {
         margin: 0 auto;
     }
