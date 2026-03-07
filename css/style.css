@@ -466,7 +466,7 @@ font {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 15%;
 }
 
 /* Navigation Arrow Container */
@@ -1495,8 +1495,8 @@ font {
         width: 100%;
         height: 100%;
         object-fit: cover !important;
-        object-position: center top !important;
-        /* show top part (head) clearly */
+        object-position: center 15% !important;
+        /* show top part clearly without getting blocked by header */
     }
 
     .hero__main-slide {
