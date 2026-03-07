@@ -1495,8 +1495,8 @@ font {
         width: 100%;
         height: 100%;
         object-fit: cover !important;
-        object-position: center 20% !important;
-        /* adjust to show faces better */
+        object-position: center top !important;
+        /* show top part (head) clearly */
     }
 
     .hero__main-slide {
