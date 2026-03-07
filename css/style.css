@@ -465,8 +465,9 @@ font {
 .hero__full-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 15%;
+    object-fit: contain;
+    /* Ensures the whole poster is visible on desktop */
+    object-position: center;
 }
 
 /* Navigation Arrow Container */
